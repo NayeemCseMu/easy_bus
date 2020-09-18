@@ -6,7 +6,7 @@ class ResponsiveSize {
   static double screenWidth;
   static Orientation orientation;
 
-  void init(BuildContext context) {
+  static void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
     screenHeight = _mediaQueryData.size.height;
     screenWidth = _mediaQueryData.size.width;
@@ -20,4 +20,8 @@ double getScreenHeight(double inputHeight) {
 
 double getScreeWidth(double inputWidth) {
   return (inputWidth / 375) * ResponsiveSize.screenWidth;
+}
+
+double getTextSize(double inputSize) {
+  return (inputSize / 812) * ResponsiveSize.screenHeight;
 }
