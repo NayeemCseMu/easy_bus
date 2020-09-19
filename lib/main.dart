@@ -1,5 +1,6 @@
 import 'package:easy_bus/constants.dart';
 import 'package:easy_bus/login/login_screen.dart';
+import 'package:easy_bus/register/register_screen.dart';
 import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: SplashScreen(),
+        home: RegisterScreen(),
         routes: {
           SplashScreen.login_screen: (context) => LoginScreen(),
         });
@@ -48,7 +49,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ResponsiveSize.init(context);
     return Scaffold(
       extendBodyBehindAppBar: true,
       body: FractionallySizedBox(
