@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import '../size.dart';
 
 class RoundButton extends StatelessWidget {
-  RoundButton({@required this.title, this.color, this.fontSize});
+  RoundButton({@required this.title, this.color, this.fontSize, this.press});
   final String title;
   final Color color;
   final double fontSize;
+  final Function press;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class RoundButton extends StatelessWidget {
         color: color,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(getScreenHeight(27.5))),
-        onPressed: () {},
+        onPressed: press,
         child: Text(
           title.toUpperCase(),
           style: TextStyle(
