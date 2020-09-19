@@ -8,9 +8,16 @@ class ResponsiveSize {
 
   static void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
-    screenHeight = _mediaQueryData.size.height;
-    screenWidth = _mediaQueryData.size.width;
+
     orientation = _mediaQueryData.orientation;
+
+    if (orientation == Orientation.portrait) {
+      screenHeight = _mediaQueryData.size.height;
+      screenWidth = _mediaQueryData.size.width;
+    } else {
+      screenHeight = _mediaQueryData.size.width;
+      screenWidth = _mediaQueryData.size.height;
+    }
   }
 }
 
