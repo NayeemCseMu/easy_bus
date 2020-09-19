@@ -1,4 +1,5 @@
 import 'package:easy_bus/constants.dart';
+import 'package:easy_bus/home/search_screen.dart';
 import 'package:easy_bus/login/login_screen.dart';
 import 'package:easy_bus/register/register_screen.dart';
 import 'package:easy_bus/size.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         routes: {
           SplashScreen.login_screen: (context) => LoginScreen(),
           RegisterScreen.register_screen: (context) => RegisterScreen(),
+          SearchScreen.search_screen: (context) => SearchScreen(),
         });
   }
 }

@@ -2,6 +2,7 @@ import 'package:easy_bus/components/header_text.dart';
 import 'package:easy_bus/components/rounded_button.dart';
 import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/constants.dart';
+import 'package:easy_bus/home/search_screen.dart';
 import 'package:easy_bus/register/register_screen.dart';
 import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
@@ -46,9 +47,13 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: getScreenHeight(20)),
                   //this is login button
                   RoundButton(
-                      title: 'Log in',
-                      color: kPrimaryColor,
-                      fontSize: getTextSize(18)),
+                    title: 'Log in',
+                    color: kPrimaryColor,
+                    fontSize: getTextSize(18),
+                    press: () {
+                      Navigator.pushNamed(context, SearchScreen.search_screen);
+                    },
+                  ),
                   SizedBox(height: getScreenHeight(20)),
                   Text(
                     'forgot password',
