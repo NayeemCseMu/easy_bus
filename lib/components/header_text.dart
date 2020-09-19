@@ -8,9 +8,11 @@ class HeaderText extends StatelessWidget {
     Key key,
     this.title,
     this.subtitle,
+    this.color,
   }) : super(key: key);
   final String title;
   final String subtitle;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,10 @@ class HeaderText extends StatelessWidget {
         Text(
           subtitle,
           textAlign: TextAlign.center,
-          style: TextStyle(color: kTextGreyColor, fontSize: getTextSize(16)),
+          style: TextStyle(
+              color: color,
+              fontSize: getTextSize(16),
+              fontWeight: FontWeight.w500),
         ),
       ],
     );
