@@ -1,11 +1,63 @@
+import 'package:easy_bus/components/header_text.dart';
+import 'package:easy_bus/components/rounded_button.dart';
+import 'package:easy_bus/components/text_field_with_container.dart';
+import 'package:easy_bus/constants.dart';
+import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(height: getScreenHeight(106)),
+            HeaderText(
+              title: 'Welcome to easybus',
+              subtitle: 'More easy to book\nyour bus-trip',
+            ),
+            SizedBox(height: getScreenHeight(50)),
+            SizedBox(
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  TextFieldContainer(
+                      hint: 'user name', icon: Icon(Icons.person)),
+                  SizedBox(height: getScreenHeight(20)),
+                  TextFieldContainer(hint: 'password', icon: Icon(Icons.lock)),
+                  SizedBox(height: getScreenHeight(20)),
+                  RoundButton(
+                      title: 'Log in',
+                      color: kPrimaryColor,
+                      fontSize: getTextSize(18)),
+                  SizedBox(height: getScreenHeight(20)),
+                  Text(
+                    'forgot password',
+                    style: TextStyle(fontSize: getTextSize(14)),
+                  ),
+                  SizedBox(height: getScreenHeight(30)),
+                  RoundButton(
+                      title: 'Register now',
+                      color: kRegButtonColor,
+                      fontSize: getTextSize(14)),
+                  SizedBox(height: getScreenHeight(15)),
+                  RoundButton(
+                      title: 'Continue with google',
+                      color: kGoogleButtonColor,
+                      fontSize: getTextSize(14)),
+                  SizedBox(height: getScreenHeight(15)),
+                  RoundButton(
+                      title: 'Continue with facbook',
+                      color: kFacebookButtonColor,
+                      fontSize: getTextSize(14)),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
