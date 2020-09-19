@@ -22,9 +22,10 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: RegisterScreen(),
+        home: SplashScreen(),
         routes: {
           SplashScreen.login_screen: (context) => LoginScreen(),
+          RegisterScreen.register_screen: (context) => RegisterScreen(),
         });
   }
 }
@@ -49,6 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ResponsiveSize.init(context);
     return Scaffold(
       extendBodyBehindAppBar: true,
       body: FractionallySizedBox(
