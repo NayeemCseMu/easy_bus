@@ -1,7 +1,8 @@
 import 'package:easy_bus/components/header_text.dart';
 import 'package:easy_bus/components/rounded_button.dart';
-import 'package:easy_bus/components/text_field_with_container.dart';
+import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/constants.dart';
+import 'package:easy_bus/register/register_screen.dart';
 import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
 
@@ -25,10 +26,21 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  TextFieldContainer(
-                      hint: 'user name', icon: Icon(Icons.person)),
+                  RoundContainer(
+                    childWidget: TextField(
+                      style: kTextFieldTextStyle,
+                      decoration: kInputDecoration.copyWith(
+                          hintText: 'username', icon: Icon(Icons.person)),
+                    ),
+                  ),
                   SizedBox(height: getScreenHeight(20)),
-                  TextFieldContainer(hint: 'password', icon: Icon(Icons.lock)),
+                  RoundContainer(
+                    childWidget: TextField(
+                      style: kTextFieldTextStyle,
+                      decoration: kInputDecoration.copyWith(
+                          hintText: 'password', icon: Icon(Icons.lock)),
+                    ),
+                  ),
                   SizedBox(height: getScreenHeight(20)),
                   RoundButton(
                       title: 'Log in',
@@ -37,13 +49,20 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: getScreenHeight(20)),
                   Text(
                     'forgot password',
-                    style: TextStyle(fontSize: getTextSize(14)),
+                    style: kTextFieldTextStyle.copyWith(
+                        fontSize: getTextSize(14),
+                        decoration: TextDecoration.underline),
                   ),
                   SizedBox(height: getScreenHeight(30)),
                   RoundButton(
-                      title: 'Register now',
-                      color: kRegButtonColor,
-                      fontSize: getTextSize(14)),
+                    title: 'Register now',
+                    color: kRegButtonColor,
+                    fontSize: getTextSize(14),
+                    press: () {
+                      Navigator.pushNamed(
+                          context, RegisterScreen.register_screen);
+                    },
+                  ),
                   SizedBox(height: getScreenHeight(15)),
                   RoundButton(
                       title: 'Continue with google',
