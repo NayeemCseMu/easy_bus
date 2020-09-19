@@ -26,6 +26,7 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  //this text field is for user name
                   RoundContainer(
                     childWidget: TextField(
                       style: kTextFieldTextStyle,
@@ -34,6 +35,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: getScreenHeight(20)),
+                  //this text field is for user password
                   RoundContainer(
                     childWidget: TextField(
                       style: kTextFieldTextStyle,
@@ -42,6 +44,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: getScreenHeight(20)),
+                  //this is login button
                   RoundButton(
                       title: 'Log in',
                       color: kPrimaryColor,
@@ -54,6 +57,7 @@ class LoginScreen extends StatelessWidget {
                         decoration: TextDecoration.underline),
                   ),
                   SizedBox(height: getScreenHeight(30)),
+                  //this is register button
                   RoundButton(
                     title: 'Register now',
                     color: kRegButtonColor,
@@ -64,11 +68,13 @@ class LoginScreen extends StatelessWidget {
                     },
                   ),
                   SizedBox(height: getScreenHeight(15)),
+                  //this is sign in with google button
                   RoundButton(
                       title: 'Continue with google',
                       color: kGoogleButtonColor,
                       fontSize: getTextSize(14)),
                   SizedBox(height: getScreenHeight(15)),
+                  //this is sign in with facebook button
                   RoundButton(
                       title: 'Continue with facbook',
                       color: kFacebookButtonColor,
