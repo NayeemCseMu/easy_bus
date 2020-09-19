@@ -30,5 +30,13 @@ final kBoxDecoration = BoxDecoration(
     borderRadius: BorderRadius.circular(getScreenHeight(27.5)),
     boxShadow: [kBoxShadow]);
 
-const kInputDecoration =
-    InputDecoration(border: InputBorder.none, hintText: '');
+//for textfield text style
+final kTextFieldTextStyle = TextStyle(
+    color: Color(0xFF444655),
+    fontSize: getTextSize(16),
+    fontWeight: FontWeight.w500);
+
+final kInputDecoration = InputDecoration(
+    border: InputBorder.none,
+    hintText: '',
+    hintStyle: TextStyle(fontSize: getTextSize(16)));
