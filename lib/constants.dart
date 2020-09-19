@@ -45,3 +45,9 @@ final kInputDecoration = InputDecoration(
     border: InputBorder.none,
     hintText: '',
     hintStyle: TextStyle(fontSize: getTextSize(16)));
+
+List<String> busList = [
+  'Ena Transport',
+  'Hanif Transport',
+  'Shyamoli Transport'
+];
