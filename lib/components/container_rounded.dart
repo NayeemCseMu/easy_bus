@@ -4,9 +4,8 @@ import '../constants.dart';
 import '../size.dart';
 
 class TextFieldContainer extends StatelessWidget {
-  TextFieldContainer({this.hint, this.icon});
-  final String hint;
-  final Widget icon;
+  TextFieldContainer({this.childWidget});
+  final Widget childWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +14,7 @@ class TextFieldContainer extends StatelessWidget {
       width: getScreeWidth(335),
       padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
       decoration: kBoxDecoration,
-      child: TextField(
-        style: TextStyle(color: Colors.black, fontSize: getTextSize(16)),
-        decoration: kInputDecoration.copyWith(hintText: hint, prefixIcon: icon),
-      ),
+      child: childWidget,
     );
   }
 }
