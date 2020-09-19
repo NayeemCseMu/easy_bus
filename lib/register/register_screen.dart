@@ -23,6 +23,7 @@ class RegisterScreen extends StatelessWidget {
                 color: Color(0xFF000000).withOpacity(0.5),
               ),
               SizedBox(height: 47),
+              //this text field is for name
               RoundContainer(
                 childWidget: TextField(
                   style: kTextFieldTextStyle,
@@ -31,6 +32,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              //this text field is for mobile number
               RoundContainer(
                 childWidget: TextField(
                   style: kTextFieldTextStyle,
@@ -39,6 +41,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              //this text field is for email
               RoundContainer(
                 childWidget: TextField(
                   style: kTextFieldTextStyle,
@@ -47,6 +50,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              //this text field is for new password
               RoundContainer(
                 childWidget: TextField(
                   style: kTextFieldTextStyle,
@@ -55,6 +59,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              //this text field is for repeat password
               RoundContainer(
                 childWidget: TextField(
                   style: kTextFieldTextStyle,
@@ -63,6 +68,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              // //this is submitted button
               RoundButton(
                 title: 'Confirm',
                 color: kPrimaryColor,
