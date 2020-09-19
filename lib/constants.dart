@@ -25,6 +25,11 @@ const kBoxShadow = BoxShadow(
     blurRadius: 15,
     color: Color.fromRGBO(32, 32, 35, 0.02));
 
+const kCardBoxShadow = BoxShadow(
+    offset: Offset(0, 8),
+    blurRadius: 15,
+    color: Color.fromRGBO(32, 32, 35, 0.05));
+
 final kBoxDecoration = BoxDecoration(
     color: kTextWhiteColor.withOpacity(0.7),
     borderRadius: BorderRadius.circular(getScreenHeight(27.5)),
