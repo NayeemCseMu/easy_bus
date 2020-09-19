@@ -17,6 +17,7 @@ class LoginScreen extends StatelessWidget {
             HeaderText(
               title: 'Welcome to easybus',
               subtitle: 'More easy to book\nyour bus-trip',
+              color: Color(0xFFC4C4C4),
             ),
             SizedBox(height: getScreenHeight(50)),
             SizedBox(
