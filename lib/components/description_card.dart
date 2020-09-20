@@ -1,4 +1,3 @@
-import 'package:easy_bus/components/text_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -25,15 +24,18 @@ class DescriptionCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SemiBoldText(title: 'Ena Transport'),
+                Text(
+                  'Ena Transport',
+                  style: kBoldText,
+                ),
                 SizedBox(height: 5.0),
-                MediumText(title: 'DHK METRO  0001'),
+                Text('DHK METRO  0001', style: kMediumText),
                 SizedBox(height: 15.0),
-                SemiBoldText(title: '3:00 AM (21 nov 19) DHK to SYL'),
+                Text('3:00 AM (21 nov 19) DHK to SYL', style: kBoldText),
                 SizedBox(height: 5.0),
-                MediumText(title: 'Seat no E1'),
+                Text('Seat no E1', style: kMediumText),
                 SizedBox(height: 15.0),
-                SemiBoldText(title: 'Single Ticket'),
+                Text('Single Ticket', style: kSemiBoldText),
               ],
             ),
           ),
