@@ -18,6 +18,8 @@ const kFacebookButtonColor = Color(0xFF3B5999);
 const kIconColor = Color(0xFFE33B00);
 const kTrainIconColor = Color(0xFFEE1952);
 
+const kInActiveColor = Color(0xFFEBEEFF);
+
 const kDefaultPadding = 20.0;
 
 const kBoxShadow = BoxShadow(
