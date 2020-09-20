@@ -37,6 +37,25 @@ final kBoxDecoration = BoxDecoration(
     borderRadius: BorderRadius.circular(getScreenHeight(27.5)),
     boxShadow: [kBoxShadow]);
 
+//Bold text
+final kBoldText = TextStyle(
+    color: kTextColor,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+    fontSize: 20);
+//SemiBold text
+final kSemiBoldText = TextStyle(
+    color: kTextColor,
+    fontWeight: FontWeight.w600,
+    fontStyle: FontStyle.normal,
+    fontSize: 18);
+//Medium text
+final kMediumText = TextStyle(
+    color: kTextColor,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.normal,
+    fontSize: 16);
+
 //for textfield text style
 final kTextFieldTextStyle = TextStyle(
     color: Color(0xFF444655),
