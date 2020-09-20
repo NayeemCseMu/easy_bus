@@ -1,7 +1,6 @@
 import 'package:easy_bus/components/description_card.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/components/tab_item.dart';
-import 'package:easy_bus/components/text_widget.dart';
 import 'package:easy_bus/constants.dart';
 import 'package:easy_bus/home/components/ticket_search_field_&_button.dart';
 import 'package:easy_bus/size.dart';
@@ -34,7 +33,10 @@ class Body extends StatelessWidget {
             SizedBox(height: kDefaultPadding), //20
             Padding(
               padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-              child: BoldText(title: 'Last Visited'),
+              child: Text(
+                'Last Visited',
+                style: kBoldText,
+              ),
             ),
             DescriptionCard() //recent visited history are kept in this card
           ],
