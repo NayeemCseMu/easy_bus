@@ -75,15 +75,19 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: getScreenHeight(15)),
                   //this is sign in with google button
                   RoundButton(
-                      title: 'Continue with google',
-                      color: kGoogleButtonColor,
-                      fontSize: getTextSize(14)),
+                    title: 'Continue with google',
+                    color: kGoogleButtonColor,
+                    fontSize: getTextSize(14),
+                    press: () {},
+                  ),
                   SizedBox(height: getScreenHeight(15)),
                   //this is sign in with facebook button
                   RoundButton(
-                      title: 'Continue with facbook',
-                      color: kFacebookButtonColor,
-                      fontSize: getTextSize(14)),
+                    title: 'Continue with facbook',
+                    color: kFacebookButtonColor,
+                    fontSize: getTextSize(14),
+                    press: () {},
+                  ),
                 ],
               ),
             ),
