@@ -1,5 +1,5 @@
 import 'package:easy_bus/constants.dart';
-import 'package:easy_bus/home/body.dart';
+import 'package:easy_bus/home/components/body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
