@@ -35,7 +35,7 @@ class Body extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
               child: Text(
                 'Last Visited',
-                style: kBoldText,
+                style: kBoldText.copyWith(color: kTextGreenColor),
               ),
             ),
             DescriptionCard() //recent visited history are kept in this card
@@ -44,7 +44,7 @@ class Body extends StatelessWidget {
       ),
     );
   }
-
+/*
   Future<DateTime> showDate(BuildContext context) async {
     DateTime pickDate = DateTime.now();
     final date = await showDatePicker(
@@ -59,4 +59,6 @@ class Body extends StatelessWidget {
     );
     if (date != null) {}
   }
+
+  */
 }
