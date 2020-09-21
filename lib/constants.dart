@@ -42,24 +42,28 @@ final kBoldText = TextStyle(
     color: kTextColor,
     fontWeight: FontWeight.w700,
     fontStyle: FontStyle.normal,
+    fontFamily: 'Montserrat',
     fontSize: 20);
 //SemiBold text
 final kSemiBoldText = TextStyle(
     color: kTextColor,
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
+    fontFamily: 'Montserrat',
     fontSize: 18);
 //Medium text
 final kMediumText = TextStyle(
     color: kTextColor,
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
+    fontFamily: 'Montserrat',
     fontSize: 16);
 
 //for textfield text style
 final kTextFieldTextStyle = TextStyle(
     color: Color(0xFF444655),
     fontSize: getTextSize(16),
+    fontFamily: 'Montserrat',
     fontWeight: FontWeight.w500);
 
 final kInputDecoration = InputDecoration(
