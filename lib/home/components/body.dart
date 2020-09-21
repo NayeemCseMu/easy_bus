@@ -1,3 +1,4 @@
+import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/components/description_card.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/components/tab_item.dart';
@@ -7,7 +8,7 @@ import 'package:easy_bus/size.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'tab_button.dart';
-import 'custom_dropdown.dart';
+import '../../components/custom_dropdown.dart';
 import 'package:provider/provider.dart';
 
 enum button { one, round }
@@ -20,7 +21,9 @@ class Body extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Header(headerChild: CustomDropDown()),
+            Header(
+              headerChild: CustomDropDown(),
+            ),
             SizedBox(height: getScreenHeight(15)),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,

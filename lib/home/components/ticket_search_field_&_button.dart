@@ -1,6 +1,7 @@
 import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/components/rounded_button.dart';
 import 'package:easy_bus/components/tab_item.dart';
+import 'package:easy_bus/search/search_ticket.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../constants.dart';
@@ -71,7 +72,9 @@ class TicketSearchField extends StatelessWidget {
             title: 'Search'.toUpperCase(),
             color: kPrimaryColor,
             fontSize: getTextSize(18),
-            press: () {},
+            press: () {
+              Navigator.pushNamed(context, SearchTicket.seach_ticket);
+            },
           )
         ],
       ),

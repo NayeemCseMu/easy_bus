@@ -2,7 +2,7 @@ import 'package:easy_bus/components/header_text.dart';
 import 'package:easy_bus/components/rounded_button.dart';
 import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/constants.dart';
-import 'package:easy_bus/home/search_screen.dart';
+import 'package:easy_bus/home/home_screen.dart';
 import 'package:easy_bus/register/register_screen.dart';
 import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
