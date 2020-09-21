@@ -44,21 +44,4 @@ class Body extends StatelessWidget {
       ),
     );
   }
-/*
-  Future<DateTime> showDate(BuildContext context) async {
-    DateTime pickDate = DateTime.now();
-    final date = await showDatePicker(
-      context: context,
-      initialDate: pickDate,
-      firstDate: DateTime(2001),
-      lastDate: DateTime(2100),
-      fieldLabelText: 'fieldLabelText',
-      fieldHintText: 'fieldHintText',
-      initialEntryMode: DatePickerEntryMode.calendar,
-      initialDatePickerMode: DatePickerMode.day,
-    );
-    if (date != null) {}
-  }
-
-  */
 }
