@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Tab {
   Tab({@required this.title, this.icon});
@@ -12,6 +13,7 @@ class Tab {
 
 class HomeTab with ChangeNotifier {
   int selectedIndex = 0;
+
   void getIndex(int index) {
     selectedIndex = index;
     notifyListeners();
@@ -23,4 +25,28 @@ class HomeTab with ChangeNotifier {
     Tab(title: 'AC'),
     Tab(title: 'NON-AC')
   ];
+
+  var dateFormat;
+  showDate(BuildContext context) async {
+    DateTime pickDate = DateTime.now();
+    final date = await showDatePicker(
+      context: context,
+      initialDate: pickDate,
+      firstDate: DateTime(2001),
+      lastDate: DateTime(2100),
+      fieldLabelText: 'fieldLabelText',
+      fieldHintText: 'fieldHintText',
+      initialEntryMode: DatePickerEntryMode.calendar,
+      initialDatePickerMode: DatePickerMode.day,
+    );
+    if (date != null) {
+      try {
+        dateFormat = DateFormat('yMMMd').format(date);
+      } catch (e) {
+        print(e.toString());
+      }
+    }
+
+    notifyListeners();
+  }
 }
