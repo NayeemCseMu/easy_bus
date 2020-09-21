@@ -3,7 +3,6 @@ import 'package:easy_bus/components/rounded_button.dart';
 import 'package:easy_bus/components/tab_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../constants.dart';
 import '../../size.dart';
 import 'package:provider/provider.dart';
@@ -46,16 +45,27 @@ class TicketSearchField extends StatelessWidget {
             ),
           ),
           RoundContainer(
-            childWidget: FlatButton(
-              onPressed: () {},
-              child: Text('Pick Date'),
-            ),
-          ),
+              childWidget: TextField(
+            readOnly: true,
+            onTap: () {
+              provider.showDate(context);
+            },
+            decoration: kInputDecoration.copyWith(
+                hintText: 'Journey date',
+                icon: SvgPicture.asset('assets/icons/date.svg')),
+          )),
           //here return date field will show/hide while we select either one way or round trip.
           selectedIndexButton == 'round trip'
               ? RoundContainer(
-                  childWidget: null,
-                )
+                  childWidget: TextField(
+                  readOnly: true,
+                  onTap: () {
+                    provider.showDate(context);
+                  },
+                  decoration: kInputDecoration.copyWith(
+                      hintText: 'Return date',
+                      icon: SvgPicture.asset('assets/icons/date.svg')),
+                ))
               : SizedBox(),
           RoundButton(
             title: 'Search'.toUpperCase(),
