@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 import '../size.dart';
-import 'container_rounded.dart';
 
 class Header extends StatelessWidget {
   Header({@required this.headerChild});
@@ -26,13 +25,7 @@ class Header extends StatelessWidget {
                     bottomRight: Radius.circular(getScreenHeight(27.5)),
                     bottomLeft: Radius.circular(getScreenHeight(27.5)))),
           ),
-          Positioned(
-              bottom: 0,
-              child: RoundContainer(
-                editBoxDecoration: true,
-                color: Colors.white,
-                childWidget: headerChild,
-              )),
+          Positioned(bottom: 0, child: headerChild),
         ],
       ),
     );

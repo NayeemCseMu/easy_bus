@@ -19,8 +19,8 @@ class RoundContainer extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       height: getScreenHeight(55),
-      width: getScreeWidth(335),
       padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+      margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
       /*we will use this for multiple time that's why we will edit this container
       decoration for our requirement by using switch editBoxDecoration true/false */
       decoration: editBoxDecoration
