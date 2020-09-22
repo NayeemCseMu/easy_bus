@@ -1,3 +1,4 @@
+import 'package:easy_bus/components/card_content.dart';
 import 'package:easy_bus/components/description_card.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/components/tab_item.dart';
@@ -42,6 +43,10 @@ class Body extends StatelessWidget {
             ),
             DescriptionCard(
               largeCard: false,
+              cardChild: CardContent(
+                busName: 'Ena',
+                busNumber: '2222',
+              ),
             ) //recent visited history are kept in this card
           ],
         ),

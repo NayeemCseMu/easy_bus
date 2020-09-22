@@ -1,3 +1,4 @@
+import 'package:easy_bus/components/card_content.dart';
 import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/components/description_card.dart';
 import 'package:easy_bus/components/header.dart';
@@ -19,6 +20,10 @@ class Body extends StatelessWidget {
               4,
               (index) => DescriptionCard(
                     largeCard: true,
+                    cardChild: CardContent(
+                      busName: 'Ena Trasn',
+                      busNumber: '5f4f',
+                    ),
                   ))
         ],
       ),
@@ -47,7 +52,7 @@ class DateAndResultCard extends StatelessWidget {
   Expanded buildExpanded({String title, Color color}) {
     return Expanded(
       child: RoundContainer(
-        margin: 0.0,
+        marginValue: 0.0,
         editBoxDecoration: true,
         color: Colors.white,
         childWidget: Text(

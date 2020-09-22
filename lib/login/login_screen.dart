@@ -29,7 +29,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   //this text field is for user name
                   RoundContainer(
-                    margin: kDefaultPadding,
+                    marginValue: kDefaultPadding,
                     childWidget: TextField(
                       style: kTextFieldTextStyle,
                       decoration: kInputDecoration.copyWith(
@@ -39,7 +39,7 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: getScreenHeight(20)),
                   //this text field is for user password
                   RoundContainer(
-                    margin: kDefaultPadding,
+                    marginValue: kDefaultPadding,
                     childWidget: TextField(
                       style: kTextFieldTextStyle,
                       decoration: kInputDecoration.copyWith(

@@ -30,7 +30,7 @@ class TicketSearchField extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           RoundContainer(
-            margin: kDefaultPadding,
+            marginValue: kDefaultPadding,
             childWidget: TextField(
               style: kTextFieldTextStyle.copyWith(fontSize: getTextSize(18)),
               decoration: kInputDecoration.copyWith(
@@ -39,7 +39,7 @@ class TicketSearchField extends StatelessWidget {
             ),
           ),
           RoundContainer(
-            margin: kDefaultPadding,
+            marginValue: kDefaultPadding,
             childWidget: TextField(
               style: kTextFieldTextStyle.copyWith(fontSize: getTextSize(18)),
               decoration: kInputDecoration.copyWith(
@@ -48,7 +48,7 @@ class TicketSearchField extends StatelessWidget {
             ),
           ),
           RoundContainer(
-              margin: kDefaultPadding,
+              marginValue: kDefaultPadding,
               childWidget: TextField(
                 readOnly: true,
                 onTap: () {
@@ -61,7 +61,7 @@ class TicketSearchField extends StatelessWidget {
           //here return date field will show/hide while we select either one way or round trip.
           selectedIndexButton == 'round trip'
               ? RoundContainer(
-                  margin: kDefaultPadding,
+                  marginValue: kDefaultPadding,
                   childWidget: TextField(
                     readOnly: true,
                     onTap: () {

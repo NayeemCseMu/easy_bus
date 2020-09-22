@@ -31,6 +31,7 @@ class RegisterScreen extends StatelessWidget {
               SizedBox(height: 47),
               //this text field is for name
               RoundContainer(
+                marginValue: kDefaultPadding,
                 childWidget: TextField(
                   style: kTextFieldTextStyle,
                   decoration: kInputDecoration.copyWith(
@@ -40,6 +41,7 @@ class RegisterScreen extends StatelessWidget {
               SizedBox(height: 20),
               //this text field is for mobile number
               RoundContainer(
+                marginValue: kDefaultPadding,
                 childWidget: TextField(
                   style: kTextFieldTextStyle,
                   decoration: kInputDecoration.copyWith(
@@ -49,6 +51,7 @@ class RegisterScreen extends StatelessWidget {
               SizedBox(height: 20),
               //this text field is for email
               RoundContainer(
+                marginValue: kDefaultPadding,
                 childWidget: TextField(
                   style: kTextFieldTextStyle,
                   decoration: kInputDecoration.copyWith(
@@ -58,6 +61,7 @@ class RegisterScreen extends StatelessWidget {
               SizedBox(height: 20),
               //this text field is for new password
               RoundContainer(
+                marginValue: kDefaultPadding,
                 childWidget: TextField(
                   style: kTextFieldTextStyle,
                   decoration: kInputDecoration.copyWith(
@@ -67,6 +71,7 @@ class RegisterScreen extends StatelessWidget {
               SizedBox(height: 20),
               //this text field is for repeat password
               RoundContainer(
+                marginValue: kDefaultPadding,
                 childWidget: TextField(
                   style: kTextFieldTextStyle,
                   decoration: kInputDecoration.copyWith(
