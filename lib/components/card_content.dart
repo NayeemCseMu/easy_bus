@@ -1,15 +1,16 @@
+import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../constants.dart';
 
-class CardContent extends StatelessWidget {
+class SeatAndDriverCardContent extends StatelessWidget {
   final String busName;
   final String busNumber;
   final bool isSeatDetail;
   final bool isTicketDetail;
 
-  const CardContent(
+  const SeatAndDriverCardContent(
       {Key key,
       this.busName,
       this.busNumber,
@@ -19,72 +20,88 @@ class CardContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: Column(
+    return Theme(
+      data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+      child: ExpansionTile(
+        expandedCrossAxisAlignment: CrossAxisAlignment.start,
+        childrenPadding: EdgeInsets.only(bottom: 0.0),
+        tilePadding: EdgeInsets.all(0.0),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              children: [
+                Text(
+                  busName,
+                  style: kBoldText,
+                ),
+                SizedBox(height: 10.0),
+                Text(busNumber, style: kMediumText),
+              ],
+            ),
+          ],
+        ),
+        subtitle: Row(
+          children: [
+            timeAndlocation(
+                icon: 'assets/icons/train.svg',
+                title: 'Time',
+                subtitle: 'Location'),
+            SizedBox(width: kDefaultPadding),
+            timeAndlocation(
+                icon: 'assets/icons/location.svg',
+                title: 'Time',
+                subtitle: 'Location'),
+          ],
+        ),
+        trailing: SvgPicture.asset('assets/icons/arrow_icon.svg'),
+        children: [
+          Row(
             children: [
-              Text(
-                busName,
-                style: kBoldText,
-              ),
-              SizedBox(height: 5.0),
-              Text(busNumber, style: kMediumText),
+              seatsDetails(title: 'Driver', subtitle: 'Name', mobileNo: '+880'),
+              SizedBox(width: kDefaultPadding),
+              seatsDetails(
+                  title: 'Supervisor', subtitle: 'Name', mobileNo: '+880'),
             ],
           ),
-        ),
-        isTicketDetail
-            ? Row(
-                children: [
-                  timeAndlocation(
-                      icon: 'assets/icons/train.svg',
-                      title: 'Time',
-                      subtitle: 'Location'),
-                  timeAndlocation(
-                      icon: 'assets/icons/location.svg',
-                      title: 'Time',
-                      subtitle: 'Location'),
-                ],
-              )
-            : SizedBox(),
-        isSeatDetail
-            ? Row(
-                children: [
-                  seatsDetails(
-                      title: 'Available seats', subtitle: '35 out of 40'),
-                  seatsDetails(title: 'Fare', subtitle: '\$40 /person'),
-                ],
-              )
-            : SizedBox(),
-      ],
+          SizedBox(height: 10),
+          Text(
+            'Route',
+            style: kSemiBoldText.copyWith(
+                color: kTextColor, fontSize: getTextSize(20)),
+          ),
+        ],
+      ),
     );
   }
 
   Expanded timeAndlocation({String icon, String title, String subtitle}) {
     return Expanded(
       child: ListTile(
+        contentPadding: EdgeInsets.all(0.0),
         leading: SvgPicture.asset(icon),
-        title: Align(
-          child: Text(title, style: kBoldText.copyWith(fontSize: 18)),
-          alignment: Alignment(-2.2, 0),
+        title: Text(title, style: kBoldText.copyWith(fontSize: 18)),
+        subtitle: Text(
+          subtitle,
+          style: kMediumText,
         ),
-        subtitle: Align(
-            child: Text(
-              subtitle,
-              style: kMediumText,
-            ),
-            alignment: Alignment(-3.5, 0)),
       ),
     );
   }
 
-  Expanded seatsDetails({String title, String subtitle}) {
+  Expanded seatsDetails({String title, String subtitle, String mobileNo}) {
     return Expanded(
       child: ListTile(
+        contentPadding: EdgeInsets.all(0.0),
         title: Text(title, style: kBoldText.copyWith(fontSize: 18)),
-        subtitle: Text(subtitle, style: kMediumText),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: kDefaultPadding / 4),
+            Text(subtitle, style: kMediumText),
+            Text(mobileNo, style: kMediumText),
+          ],
+        ),
       ),
     );
   }
