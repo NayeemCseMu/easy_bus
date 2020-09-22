@@ -20,7 +20,7 @@ class Body extends StatelessWidget {
               4,
               (index) => DescriptionCard(
                     largeCard: true,
-                    cardChild: CardContent(
+                    cardChild: SeatAndDriverCardContent(
                       busName: 'Ena Trasn',
                       busNumber: '5f4f',
                     ),

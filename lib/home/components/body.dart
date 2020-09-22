@@ -43,7 +43,7 @@ class Body extends StatelessWidget {
             ),
             DescriptionCard(
               largeCard: false,
-              cardChild: CardContent(
+              cardChild: SeatAndDriverCardContent(
                 busName: 'Ena',
                 busNumber: '2222',
               ),

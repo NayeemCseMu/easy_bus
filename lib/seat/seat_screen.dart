@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../size.dart';
 
 class SeatSelect extends StatelessWidget {
+  static const seat_select = "seat_select";
   @override
   Widget build(BuildContext context) {
     ResponsiveSize.init(context);

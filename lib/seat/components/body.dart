@@ -27,10 +27,9 @@ class Body extends StatelessWidget {
         ),
         DescriptionCard(
             largeCard: false,
-            cardChild: CardContent(
+            cardChild: SeatAndDriverCardContent(
               busName: 'Ena Transport',
               busNumber: 'DHK METRO 3350',
-              isTicketDetail: true,
             )),
       ],
     );
