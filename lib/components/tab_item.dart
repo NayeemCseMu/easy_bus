@@ -28,17 +28,13 @@ class HomeTab with ChangeNotifier {
   ];
 
   var dateFormat;
-  showDate(BuildContext context) async {
-    DateTime pickDate = DateTime.now();
+  void showDate(BuildContext context) async {
+    DateTime initialDate = DateTime.now();
     final date = await showDatePicker(
       context: context,
-      initialDate: pickDate,
+      initialDate: initialDate,
       firstDate: DateTime(2001),
       lastDate: DateTime(2100),
-      fieldLabelText: 'fieldLabelText',
-      fieldHintText: 'fieldHintText',
-      initialEntryMode: DatePickerEntryMode.calendar,
-      initialDatePickerMode: DatePickerMode.day,
     );
     if (date != null) {
       try {

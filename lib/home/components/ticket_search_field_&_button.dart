@@ -30,6 +30,7 @@ class TicketSearchField extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           RoundContainer(
+            margin: kDefaultPadding,
             childWidget: TextField(
               style: kTextFieldTextStyle.copyWith(fontSize: getTextSize(18)),
               decoration: kInputDecoration.copyWith(
@@ -38,6 +39,7 @@ class TicketSearchField extends StatelessWidget {
             ),
           ),
           RoundContainer(
+            margin: kDefaultPadding,
             childWidget: TextField(
               style: kTextFieldTextStyle.copyWith(fontSize: getTextSize(18)),
               decoration: kInputDecoration.copyWith(
@@ -46,27 +48,29 @@ class TicketSearchField extends StatelessWidget {
             ),
           ),
           RoundContainer(
+              margin: kDefaultPadding,
               childWidget: TextField(
-            readOnly: true,
-            onTap: () {
-              provider.showDate(context);
-            },
-            decoration: kInputDecoration.copyWith(
-                hintText: 'Journey date',
-                icon: SvgPicture.asset('assets/icons/date.svg')),
-          )),
+                readOnly: true,
+                onTap: () {
+                  provider.showDate(context);
+                },
+                decoration: kInputDecoration.copyWith(
+                    hintText: 'Journey date',
+                    icon: SvgPicture.asset('assets/icons/date.svg')),
+              )),
           //here return date field will show/hide while we select either one way or round trip.
           selectedIndexButton == 'round trip'
               ? RoundContainer(
+                  margin: kDefaultPadding,
                   childWidget: TextField(
-                  readOnly: true,
-                  onTap: () {
-                    provider.showDate(context);
-                  },
-                  decoration: kInputDecoration.copyWith(
-                      hintText: 'Return date',
-                      icon: SvgPicture.asset('assets/icons/date.svg')),
-                ))
+                    readOnly: true,
+                    onTap: () {
+                      provider.showDate(context);
+                    },
+                    decoration: kInputDecoration.copyWith(
+                        hintText: 'Return date',
+                        icon: SvgPicture.asset('assets/icons/date.svg')),
+                  ))
               : SizedBox(),
           RoundButton(
             title: 'Search'.toUpperCase(),

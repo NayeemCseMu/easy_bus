@@ -8,11 +8,13 @@ class RoundContainer extends StatelessWidget {
       {this.childWidget,
       this.boxDecoration,
       this.editBoxDecoration = false,
-      this.color});
+      this.color,
+      this.margin});
   final Widget childWidget;
   final bool editBoxDecoration;
   final BoxDecoration boxDecoration;
   final Color color;
+  final double margin;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class RoundContainer extends StatelessWidget {
       alignment: Alignment.center,
       height: getScreenHeight(55),
       padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+      margin: EdgeInsets.symmetric(horizontal: margin),
       /*we will use this for multiple time that's why we will edit this container
       decoration for our requirement by using switch editBoxDecoration true/false */
       decoration: editBoxDecoration

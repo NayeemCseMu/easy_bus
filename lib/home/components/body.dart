@@ -1,4 +1,3 @@
-import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/components/description_card.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/components/tab_item.dart';
@@ -41,7 +40,9 @@ class Body extends StatelessWidget {
                 style: kBoldText.copyWith(color: kTextGreenColor),
               ),
             ),
-            DescriptionCard() //recent visited history are kept in this card
+            DescriptionCard(
+              largeCard: false,
+            ) //recent visited history are kept in this card
           ],
         ),
       ),

@@ -15,7 +15,11 @@ class Body extends StatelessWidget {
           Header(headerChild: DateAndResultCard()),
           SizedBox(height: getScreenHeight(15)),
           CustomDropDown(),
-          ...List.generate(2, (index) => DescriptionCard())
+          ...List.generate(
+              4,
+              (index) => DescriptionCard(
+                    largeCard: true,
+                  ))
         ],
       ),
     );
@@ -27,11 +31,15 @@ class DateAndResultCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: getScreeWidth(335),
-      child: Row(
-        children: [
-          buildExpanded(title: 'Dec 3, 2020', color: kGoogleButtonColor),
-          buildExpanded(title: '21 results found', color: kTextGreenColor),
-        ],
+      child: SizedBox(
+        width: getScreeWidth(335),
+        child: Row(
+          children: [
+            buildExpanded(title: 'Dec 3, 2020', color: kGoogleButtonColor),
+            SizedBox(width: kDefaultPadding),
+            buildExpanded(title: '21 results found', color: kTextGreenColor),
+          ],
+        ),
       ),
     );
   }
@@ -39,6 +47,7 @@ class DateAndResultCard extends StatelessWidget {
   Expanded buildExpanded({String title, Color color}) {
     return Expanded(
       child: RoundContainer(
+        margin: 0.0,
         editBoxDecoration: true,
         color: Colors.white,
         childWidget: Text(
