@@ -15,8 +15,8 @@ class HeaderText extends StatelessWidget {
       children: [
         Text(
           title.toUpperCase(),
-          style: kSemiBoldText
-              .copyWith(color: kPrimaryColor, shadows: [kTextShadow]),
+          style:
+              kBoldText.copyWith(color: kPrimaryColor, shadows: [kTextShadow]),
         ),
         SizedBox(height: getScreenHeight(15)),
         Text(

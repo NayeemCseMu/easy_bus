@@ -1,3 +1,4 @@
+import 'package:easy_bus/components/app_bar.dart';
 import 'package:easy_bus/components/header_text.dart';
 import 'package:easy_bus/components/rounded_button.dart';
 import 'package:easy_bus/components/container_rounded.dart';
@@ -10,12 +11,8 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.arrow_back),
-        ),
-      ),
+      extendBodyBehindAppBar: true,
+      appBar: buildAppBar(title: ""),
       body: SingleChildScrollView(
         child: SizedBox(
           width: double.infinity,
@@ -81,6 +78,7 @@ class RegisterScreen extends StatelessWidget {
               SizedBox(height: 20),
               // //this is submitted button
               RoundButton(
+                press: () {},
                 title: 'Confirm',
                 color: kPrimaryColor,
                 fontSize: getTextSize(18),
