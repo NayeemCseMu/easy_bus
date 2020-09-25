@@ -1,6 +1,5 @@
 import 'package:easy_bus/constants.dart';
 import 'package:easy_bus/home/home_screen.dart';
-
 import 'package:easy_bus/login/login_screen.dart';
 import 'package:easy_bus/register/register_screen.dart';
 import 'package:easy_bus/search/search_ticket.dart';
@@ -9,7 +8,8 @@ import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'components/tab_item.dart';
+
+import 'model/tab_item.dart';
 
 void main() {
   runApp(MyApp());
