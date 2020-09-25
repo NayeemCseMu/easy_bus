@@ -4,8 +4,8 @@ import 'package:easy_bus/components/custom_dropdown.dart';
 import 'package:easy_bus/components/common_description_card.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/constants.dart';
-import 'package:easy_bus/seat/seat_screen.dart';
 import 'package:easy_bus/size.dart';
+import 'package:easy_bus/view/seat/seat_screen.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {

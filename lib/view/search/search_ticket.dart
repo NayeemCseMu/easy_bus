@@ -1,5 +1,5 @@
 import 'package:easy_bus/components/app_bar.dart';
-import 'package:easy_bus/search/components/body.dart';
+import 'package:easy_bus/view/search/components/body.dart';
 import 'package:flutter/material.dart';
 
 class SearchTicket extends StatelessWidget {
