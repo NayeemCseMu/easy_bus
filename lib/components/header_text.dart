@@ -4,14 +4,9 @@ import '../constants.dart';
 import '../size.dart';
 
 class HeaderText extends StatelessWidget {
-  const HeaderText({
-    Key key,
-    this.title,
-    this.subtitle,
-    this.color,
-  }) : super(key: key);
-  final String title;
-  final String subtitle;
+  HeaderText({Key key, this.title, this.subtitle, this.color});
+
+  final String title, subtitle;
   final Color color;
 
   @override
@@ -20,25 +15,14 @@ class HeaderText extends StatelessWidget {
       children: [
         Text(
           title.toUpperCase(),
-          style: TextStyle(
-              color: kSecondaryColor,
-              fontSize: getTextSize(20),
-              fontWeight: FontWeight.w700,
-              shadows: [
-                BoxShadow(
-                    offset: Offset(0, 4),
-                    blurRadius: 4,
-                    color: Color.fromRGBO(0, 0, 0, 0.25))
-              ]),
+          style: kSemiBoldText
+              .copyWith(color: kPrimaryColor, shadows: [kTextShadow]),
         ),
         SizedBox(height: getScreenHeight(15)),
         Text(
           subtitle,
           textAlign: TextAlign.center,
-          style: TextStyle(
-              color: color,
-              fontSize: getTextSize(16),
-              fontWeight: FontWeight.w500),
+          style: kMediumText.copyWith(color: color),
         ),
       ],
     );

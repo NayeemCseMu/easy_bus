@@ -1,6 +1,6 @@
-import 'package:easy_bus/components/card_content.dart';
+import 'package:easy_bus/components/expansion_card_content.dart';
 import 'package:easy_bus/components/container_rounded.dart';
-import 'package:easy_bus/components/description_card.dart';
+import 'package:easy_bus/components/expansion_description_card.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/constants.dart';
 import 'package:easy_bus/size.dart';
@@ -25,12 +25,11 @@ class Body extends StatelessWidget {
             ),
           ),
         ),
-        DescriptionCard(
-            largeCard: false,
-            cardChild: SeatAndDriverCardContent(
-              busName: 'Ena Transport',
-              busNumber: 'DHK METRO 3350',
-            )),
+        ExpansionDescriptionCard(
+            cardChild: ExpansionCardContent(
+          busName: 'Ena Transport',
+          busNumber: 'DHK METRO 3350',
+        )),
       ],
     );
   }

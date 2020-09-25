@@ -1,15 +1,16 @@
-import 'package:easy_bus/components/card_content.dart';
-import 'package:easy_bus/components/description_card.dart';
+import 'package:easy_bus/components/common_card_content.dart';
+import 'package:easy_bus/components/common_description_card.dart';
 import 'package:easy_bus/components/header.dart';
-import 'package:easy_bus/components/tab_item.dart';
+import 'package:easy_bus/model/tab_item.dart';
 import 'package:easy_bus/constants.dart';
 import 'package:easy_bus/home/components/ticket_search_field_&_button.dart';
 import 'package:easy_bus/size.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'tab_button.dart';
-import '../../components/custom_dropdown.dart';
 import 'package:provider/provider.dart';
+
+import '../../components/custom_dropdown.dart';
+import 'tab_button.dart';
 
 enum button { one, round }
 
@@ -41,9 +42,8 @@ class Body extends StatelessWidget {
                 style: kBoldText.copyWith(color: kTextGreenColor),
               ),
             ),
-            DescriptionCard(
-              largeCard: false,
-              cardChild: SeatAndDriverCardContent(
+            CommonDescriptionCard(
+              cardChild: CommonCardContent(
                 busName: 'Ena',
                 busNumber: '2222',
               ),

@@ -1,9 +1,10 @@
-import 'package:easy_bus/components/card_content.dart';
+import 'package:easy_bus/components/common_card_content.dart';
 import 'package:easy_bus/components/container_rounded.dart';
-import 'package:easy_bus/components/description_card.dart';
+import 'package:easy_bus/components/custom_dropdown.dart';
+import 'package:easy_bus/components/common_description_card.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/constants.dart';
-import 'package:easy_bus/components/custom_dropdown.dart';
+import 'package:easy_bus/seat/seat_screen.dart';
 import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +19,11 @@ class Body extends StatelessWidget {
           CustomDropDown(),
           ...List.generate(
               4,
-              (index) => DescriptionCard(
-                    largeCard: true,
-                    cardChild: SeatAndDriverCardContent(
+              (index) => CommonDescriptionCard(
+                    press: () {
+                      Navigator.pushNamed(context, SeatSelect.seat_select);
+                    },
+                    cardChild: CommonCardContent(
                       busName: 'Ena Trasn',
                       busNumber: '5f4f',
                     ),
@@ -49,7 +52,7 @@ class DateAndResultCard extends StatelessWidget {
     );
   }
 
-  Expanded buildExpanded({String title, Color color}) {
+  Expanded buildExpanded({String title, Color color, double flexSize}) {
     return Expanded(
       child: RoundContainer(
         marginValue: 0.0,
