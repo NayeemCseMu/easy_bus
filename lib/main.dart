@@ -1,15 +1,15 @@
 import 'package:easy_bus/constants.dart';
-import 'package:easy_bus/home/home_screen.dart';
-import 'package:easy_bus/login/login_screen.dart';
-import 'package:easy_bus/register/register_screen.dart';
-import 'package:easy_bus/search/search_ticket.dart';
-import 'package:easy_bus/seat/seat_screen.dart';
 import 'package:easy_bus/size.dart';
+import 'package:easy_bus/view/home/home_screen.dart';
+import 'package:easy_bus/view/register/register_screen.dart';
+import 'package:easy_bus/view/search/search_ticket.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'model/tab_item.dart';
+import 'view/login/login_screen.dart';
+import 'view/seat/seat_screen.dart';
 
 void main() {
   runApp(MyApp());
