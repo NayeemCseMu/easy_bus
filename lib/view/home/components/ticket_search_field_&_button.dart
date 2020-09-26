@@ -75,7 +75,7 @@ class TicketSearchField extends StatelessWidget {
                   ))
               : SizedBox(),
           RoundButton(
-            title: 'Search'.toUpperCase(),
+            title: 'Search',
             color: kPrimaryColor,
             fontSize: getTextSize(18),
             press: () {
