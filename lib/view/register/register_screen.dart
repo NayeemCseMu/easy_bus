@@ -12,7 +12,7 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: buildAppBar(title: ""),
+      appBar: buildAppBar(title: "", trailing: false, color: kTextColor),
       body: SingleChildScrollView(
         child: SizedBox(
           width: double.infinity,
