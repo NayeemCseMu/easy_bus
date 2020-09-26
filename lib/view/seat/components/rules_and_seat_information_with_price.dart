@@ -1,5 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:easy_bus/model/seats_icon.dart';
+import 'package:easy_bus/model/list_of_icon_and_text.dart';
 import 'package:easy_bus/view/home/components/tab_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

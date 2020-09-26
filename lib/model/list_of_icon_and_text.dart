@@ -44,6 +44,7 @@ List<TextWidget> textAndIcon = [
 
 List<String> seatSerial = ['D1', 'D2', 'E3', 'E4'];
 
+//payment method icons
 List<String> paymentIcon = [
   'assets/icons/visa.svg',
   'assets/icons/visa.svg',

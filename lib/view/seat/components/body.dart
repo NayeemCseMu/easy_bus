@@ -4,7 +4,7 @@ import 'package:easy_bus/components/expansion_description_card.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/components/rounded_button.dart';
 import 'package:easy_bus/constants.dart';
-import 'package:easy_bus/model/seats_icon.dart';
+import 'package:easy_bus/model/list_of_icon_and_text.dart';
 import 'package:easy_bus/size.dart';
 import 'package:easy_bus/view/payment/payment_screen.dart';
 import 'package:flutter/material.dart';

@@ -3,7 +3,7 @@ import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/components/rounded_button.dart';
 import 'package:easy_bus/constants.dart';
-import 'package:easy_bus/model/seats_icon.dart';
+import 'package:easy_bus/model/list_of_icon_and_text.dart';
 import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
