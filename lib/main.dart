@@ -1,6 +1,7 @@
 import 'package:easy_bus/constants.dart';
 import 'package:easy_bus/size.dart';
 import 'package:easy_bus/view/home/home_screen.dart';
+import 'package:easy_bus/view/payment/payment_screen.dart';
 import 'package:easy_bus/view/register/register_screen.dart';
 import 'package:easy_bus/view/search/search_ticket.dart';
 import 'package:flutter/material.dart';
@@ -30,13 +31,14 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
-          home: SeatSelect(),
+          home: SplashScreen(),
           routes: {
             SplashScreen.login_screen: (context) => LoginScreen(),
             RegisterScreen.register_screen: (context) => RegisterScreen(),
             SearchScreen.search_screen: (context) => SearchScreen(),
             SearchTicket.seach_ticket: (context) => SearchTicket(),
             SeatSelect.seat_select: (context) => SeatSelect(),
+            PaymentScreen.payment_screen: (context) => PaymentScreen()
           }),
     );
   }
