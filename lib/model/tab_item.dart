@@ -14,9 +14,15 @@ class Tab {
 
 class HomeTab with ChangeNotifier {
   int selectedIndex = 0;
+  int seatSelectIndex = -1;
 
   void getIndex(int index) {
     selectedIndex = index;
+    notifyListeners();
+  }
+
+  void getSeatIndex(int index) {
+    seatSelectIndex = index;
     notifyListeners();
   }
 
