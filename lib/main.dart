@@ -24,13 +24,13 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
           title: 'EasyBuss',
           theme: ThemeData(
-            scaffoldBackgroundColor: kBackgroundColor,
+            scaffoldBackgroundColor: Colors.white.withOpacity(0.9),
             textTheme:
                 GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
-          home: SplashScreen(),
+          home: SeatSelect(),
           routes: {
             SplashScreen.login_screen: (context) => LoginScreen(),
             RegisterScreen.register_screen: (context) => RegisterScreen(),
