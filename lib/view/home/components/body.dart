@@ -18,38 +18,44 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<HomeTab>(
-      builder: (context, tabItem, child) => SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Header(
-              headerChild: CustomDropDown(),
-            ),
-            SizedBox(height: getScreenHeight(15)),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: TabButton(tabItem: tabItem), //Top tab button
-            ),
-            SizedBox(height: kDefaultPadding),
+      builder: (context, tabItem, child) => Column(
+        children: [
+          Header(
+            headerChild: CustomDropDown(),
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: getScreenHeight(15)),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: TabButton(tabItem: tabItem), //Top tab button
+                  ),
+                  SizedBox(height: kDefaultPadding),
 
-            //this portion contain TextField and Search Button
-            TicketSearchField(),
-            SizedBox(height: kDefaultPadding), //20
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-              child: Text(
-                'Last Visited',
-                style: kBoldText.copyWith(color: kTextGreenColor),
+                  //this portion contain TextField and Search Button
+                  TicketSearchField(),
+                  SizedBox(height: kDefaultPadding), //20
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                    child: Text(
+                      'Last Visited',
+                      style: kBoldText.copyWith(color: kTextGreenColor),
+                    ),
+                  ),
+                  CommonDescriptionCard(
+                    cardChild: CommonCardContent(
+                      busName: 'Ena',
+                      busNumber: '2222',
+                    ),
+                  ),
+                ],
               ),
             ),
-            CommonDescriptionCard(
-              cardChild: CommonCardContent(
-                busName: 'Ena',
-                busNumber: '2222',
-              ),
-            ) //recent visited history are kept in this card
-          ],
-        ),
+          ), //recent visited history are kept in this card
+        ],
       ),
     );
   }

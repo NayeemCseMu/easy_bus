@@ -11,15 +11,18 @@ import 'package:flutter/material.dart';
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          Header(headerChild: DateAndResultCard()),
-          SizedBox(height: getScreenHeight(15)),
-          CustomDropDown(),
-          ...List.generate(
-              4,
-              (index) => CommonDescriptionCard(
+    return Column(
+      children: <Widget>[
+        Header(headerChild: DateAndResultCard()),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: getScreenHeight(15)),
+                CustomDropDown(),
+                ...List.generate(
+                  4,
+                  (index) => CommonDescriptionCard(
                     press: () {
                       Navigator.pushNamed(context, SeatSelect.seat_select);
                     },
@@ -27,9 +30,13 @@ class Body extends StatelessWidget {
                       busName: 'Ena Trasn',
                       busNumber: '5f4f',
                     ),
-                  ))
-        ],
-      ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
+      ],
     );
   }
 }
