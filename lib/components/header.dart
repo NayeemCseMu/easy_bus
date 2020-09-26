@@ -4,13 +4,14 @@ import '../constants.dart';
 import '../size.dart';
 
 class Header extends StatelessWidget {
-  Header({@required this.headerChild});
+  Header({@required this.headerChild, this.size = 168.0});
   final Widget headerChild;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: getScreenHeight(168),
+      height: getScreenHeight(size),
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
