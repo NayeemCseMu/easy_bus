@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants.dart';
 
@@ -22,8 +23,35 @@ class CommonCardContent extends StatelessWidget {
           ),
           SizedBox(height: 10.0),
           Text(busNumber, style: kMediumText),
+          Row(
+            children: [
+              Expanded(
+                  flex: 1,
+                  child: buildListTile(
+                      isIcon: true,
+                      icon: 'assets/icons/train.svg',
+                      title: 'Time',
+                      subtitle: 'Location')),
+              Expanded(
+                  flex: 1,
+                  child: buildListTile(
+                      isIcon: true,
+                      icon: 'assets/icons/location.svg',
+                      title: 'Time',
+                      subtitle: 'Location')),
+            ],
+          ),
         ],
       ),
     );
+  }
+
+  ListTile buildListTile(
+      {String icon, String title, String subtitle, bool isIcon = false}) {
+    return ListTile(
+        contentPadding: EdgeInsets.all(0.0),
+        leading: isIcon ? SvgPicture.asset(icon) : SizedBox(width: 0.0),
+        title: Text(title),
+        subtitle: Text(subtitle));
   }
 }

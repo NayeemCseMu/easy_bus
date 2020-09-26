@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
-class ExpansionDescriptionCard extends StatelessWidget {
+class ExpansionCard extends StatelessWidget {
   final Widget cardChild;
   final Function press;
 
-  ExpansionDescriptionCard({@required this.cardChild, this.press});
+  ExpansionCard({@required this.cardChild, this.press});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: press,
       child: Container(
-        padding: EdgeInsets.all(kDefaultPadding),
+        padding: EdgeInsets.all(kDefaultPadding / 2),
         margin: EdgeInsets.symmetric(
             horizontal: kDefaultPadding, vertical: kDefaultPadding / 2),
         decoration: BoxDecoration(
