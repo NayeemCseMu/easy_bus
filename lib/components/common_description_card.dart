@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
-class CommonDescriptionCard extends StatelessWidget {
+class HistoryAndSearchCard extends StatelessWidget {
   final Widget cardChild;
   final Function press;
 
-  CommonDescriptionCard({@required this.cardChild, this.press});
+  HistoryAndSearchCard({@required this.cardChild, this.press});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: press,
       child: AspectRatio(
-        aspectRatio: 1.9,
+        aspectRatio: 3 / 2,
         child: Container(
           padding: EdgeInsets.all(kDefaultPadding),
           margin: EdgeInsets.symmetric(

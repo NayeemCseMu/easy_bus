@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../constants.dart';
+import '../size.dart';
 
 class ExpansionCardContent extends StatelessWidget {
   final String busName;
@@ -21,15 +22,24 @@ class ExpansionCardContent extends StatelessWidget {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            buildListTile(title: busName, subtitle: busNumber),
+            SizedBox(height: kDefaultPadding),
+            Row(
               children: [
-                Text(
-                  busName,
-                  style: kBoldText,
-                ),
-                SizedBox(height: 10.0),
-                Text(busNumber, style: kMediumText),
+                Expanded(
+                    flex: 2,
+                    child: buildListTile(
+                        isIcon: true,
+                        icon: 'assets/icons/train.svg',
+                        title: 'Time',
+                        subtitle: 'Location')),
+                Expanded(
+                    flex: 1,
+                    child: buildListTile(
+                        isIcon: true,
+                        icon: 'assets/icons/location.svg',
+                        title: 'Time',
+                        subtitle: 'Location')),
               ],
             ),
           ],
@@ -37,13 +47,47 @@ class ExpansionCardContent extends StatelessWidget {
         // trailing: SvgPicture.asset('assets/icons/arrow_icon.svg'),
 
         children: [
-          ListTile(
-              contentPadding: EdgeInsets.all(0.0),
-              leading: SvgPicture.asset('assets/icons/train.svg'),
-              title: Text('Time'),
-              subtitle: Text('location')),
+          SizedBox(height: kDefaultPadding),
+          Divider(
+            indent: kDefaultPadding,
+            endIndent: kDefaultPadding,
+            color: Colors.black,
+          ),
+          SizedBox(height: kDefaultPadding / 2),
+          Row(
+            children: [
+              Expanded(
+                  flex: 2,
+                  child: buildListTile(title: 'Driver', subtitle: 'Location')),
+              Expanded(
+                  flex: 1,
+                  child:
+                      buildListTile(title: 'Supervisor', subtitle: 'Location')),
+            ],
+          ),
         ],
       ),
+    );
+  }
+
+  Row buildListTile(
+      {String icon, String title, String subtitle, bool isIcon = false}) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        isIcon ? SvgPicture.asset(icon) : SizedBox(width: 0.0),
+        SizedBox(width: kDefaultPadding / 2),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(title, style: kBoldText.copyWith(fontSize: getTextSize(18))),
+            SizedBox(height: kDefaultPadding / 4),
+            Text(subtitle,
+                style:
+                    kMediumText.copyWith(color: Colors.black.withOpacity(0.5))),
+          ],
+        ),
+      ],
     );
   }
 }

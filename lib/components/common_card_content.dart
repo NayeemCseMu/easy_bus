@@ -1,13 +1,14 @@
+import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants.dart';
 
-class CommonCardContent extends StatelessWidget {
+class HistoryAndSearchCardContent extends StatelessWidget {
   final String busName;
   final String busNumber;
 
-  const CommonCardContent({Key key, this.busName, this.busNumber})
+  const HistoryAndSearchCardContent({Key key, this.busName, this.busNumber})
       : super(key: key);
 
   @override
@@ -16,17 +17,13 @@ class CommonCardContent extends StatelessWidget {
       data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text(
-            busName,
-            style: kBoldText,
-          ),
-          SizedBox(height: 10.0),
-          Text(busNumber, style: kMediumText),
+          buildListTile(title: busName, subtitle: busNumber),
           Row(
             children: [
               Expanded(
-                  flex: 1,
+                  flex: 2,
                   child: buildListTile(
                       isIcon: true,
                       icon: 'assets/icons/train.svg',
@@ -41,17 +38,41 @@ class CommonCardContent extends StatelessWidget {
                       subtitle: 'Location')),
             ],
           ),
+          Row(
+            children: [
+              Expanded(
+                  flex: 2,
+                  child: buildListTile(
+                      title: 'Available seats', subtitle: '35 out of 40')),
+              Expanded(
+                  flex: 1,
+                  child:
+                      buildListTile(title: 'Fare', subtitle: '\$40 /person')),
+            ],
+          ),
         ],
       ),
     );
   }
 
-  ListTile buildListTile(
+  Row buildListTile(
       {String icon, String title, String subtitle, bool isIcon = false}) {
-    return ListTile(
-        contentPadding: EdgeInsets.all(0.0),
-        leading: isIcon ? SvgPicture.asset(icon) : SizedBox(width: 0.0),
-        title: Text(title),
-        subtitle: Text(subtitle));
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        isIcon ? SvgPicture.asset(icon) : SizedBox(width: 0.0),
+        SizedBox(width: kDefaultPadding / 2),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(title, style: kBoldText.copyWith(fontSize: getTextSize(18))),
+            SizedBox(height: kDefaultPadding / 4),
+            Text(subtitle,
+                style:
+                    kMediumText.copyWith(color: Colors.black.withOpacity(0.5))),
+          ],
+        ),
+      ],
+    );
   }
 }
