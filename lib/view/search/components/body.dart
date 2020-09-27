@@ -22,11 +22,11 @@ class Body extends StatelessWidget {
                 CustomDropDown(),
                 ...List.generate(
                   4,
-                  (index) => CommonDescriptionCard(
+                  (index) => HistoryAndSearchCard(
                     press: () {
                       Navigator.pushNamed(context, SeatSelect.seat_select);
                     },
-                    cardChild: CommonCardContent(
+                    cardChild: HistoryAndSearchCardContent(
                       busName: 'Ena Trasn',
                       busNumber: '5f4f',
                     ),
