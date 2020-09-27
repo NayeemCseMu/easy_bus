@@ -45,8 +45,8 @@ class Body extends StatelessWidget {
                       style: kBoldText.copyWith(color: kTextGreenColor),
                     ),
                   ),
-                  CommonDescriptionCard(
-                    cardChild: CommonCardContent(
+                  HistoryAndSearchCard(
+                    cardChild: HistoryAndSearchCardContent(
                       busName: 'Ena',
                       busNumber: '2222',
                     ),

@@ -59,8 +59,8 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: getScreenHeight(20)),
                   Text(
                     'forgot password',
-                    style: kTextFieldTextStyle.copyWith(
-                        fontSize: getTextSize(14),
+                    style: kMediumText.copyWith(
+                        fontSize: getTextSize(16),
                         decoration: TextDecoration.underline),
                   ),
                   SizedBox(height: getScreenHeight(30)),
