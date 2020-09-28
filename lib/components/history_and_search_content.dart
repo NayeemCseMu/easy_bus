@@ -7,8 +7,10 @@ import '../constants.dart';
 class HistoryAndSearchCardContent extends StatelessWidget {
   final String busName;
   final String busNumber;
+  final bool isHistory;
 
-  const HistoryAndSearchCardContent({Key key, this.busName, this.busNumber})
+  const HistoryAndSearchCardContent(
+      {Key key, this.busName, this.busNumber, this.isHistory = false})
       : super(key: key);
 
   @override
@@ -17,39 +19,50 @@ class HistoryAndSearchCardContent extends StatelessWidget {
       data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           buildListTile(title: busName, subtitle: busNumber),
-          Row(
-            children: [
-              Expanded(
-                  flex: 2,
-                  child: buildListTile(
-                      isIcon: true,
-                      icon: 'assets/icons/train.svg',
-                      title: 'Time',
-                      subtitle: 'Location')),
-              Expanded(
-                  flex: 1,
-                  child: buildListTile(
-                      isIcon: true,
-                      icon: 'assets/icons/location.svg',
-                      title: 'Time',
-                      subtitle: 'Location')),
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                  flex: 2,
-                  child: buildListTile(
-                      title: 'Available seats', subtitle: '35 out of 40')),
-              Expanded(
-                  flex: 1,
-                  child:
-                      buildListTile(title: 'Fare', subtitle: '\$40 /person')),
-            ],
-          ),
+          isHistory
+              ? buildListTile(
+                  isIcon: false,
+                  title: '3:00 AM (21 nov 19) DHK to SYL',
+                  subtitle: 'Seat no E1',
+                )
+              : Row(
+                  children: [
+                    SizedBox(width: kDefaultPadding / 2),
+                    Expanded(
+                        flex: 2,
+                        child: buildListTile(
+                            isIcon: true,
+                            icon: 'assets/icons/train.svg',
+                            title: 'Time',
+                            subtitle: 'Location')),
+                    Expanded(
+                        flex: 1,
+                        child: buildListTile(
+                            isIcon: true,
+                            icon: 'assets/icons/location.svg',
+                            title: 'Time',
+                            subtitle: 'Location')),
+                  ],
+                ),
+          isHistory
+              ? buildListTile(
+                  isIcon: false, title: 'Single Ticket', subtitle: '')
+              : Row(
+                  children: [
+                    Expanded(
+                        flex: 2,
+                        child: buildListTile(
+                            title: 'Available seats',
+                            subtitle: '35 out of 40')),
+                    Expanded(
+                        flex: 1,
+                        child: buildListTile(
+                            title: 'Fare', subtitle: '\$40 /person')),
+                  ],
+                ),
         ],
       ),
     );
