@@ -1,7 +1,7 @@
-import 'package:easy_bus/components/common_card_content.dart';
+import 'package:easy_bus/components/history_and_search_content.dart';
 import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/components/custom_dropdown.dart';
-import 'package:easy_bus/components/common_description_card.dart';
+import 'package:easy_bus/components/history_and_search_card.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/constants.dart';
 import 'package:easy_bus/size.dart';
@@ -27,8 +27,8 @@ class Body extends StatelessWidget {
                       Navigator.pushNamed(context, SeatSelect.seat_select);
                     },
                     cardChild: HistoryAndSearchCardContent(
-                      busName: 'Ena Trasn',
-                      busNumber: '5f4f',
+                      busName: 'Ena Transportn',
+                      busNumber: 'DHK METRO 3350',
                     ),
                   ),
                 ),

@@ -13,7 +13,7 @@ class HistoryAndSearchCard extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: AspectRatio(
-        aspectRatio: 3 / 2,
+        aspectRatio: 1.85,
         child: Container(
           padding: EdgeInsets.all(kDefaultPadding),
           margin: EdgeInsets.symmetric(

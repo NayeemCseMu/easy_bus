@@ -25,10 +25,10 @@ class TicketSearchField extends StatelessWidget {
       width: double.infinity,
       //here height will be vary with our selected button.
       height: selectedIndexButton == 'one way'
-          ? getScreenHeight(285)
+          ? getScreenHeight(300)
           : getScreeWidth(340),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           RoundContainer(

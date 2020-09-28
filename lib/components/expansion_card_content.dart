@@ -17,7 +17,6 @@ class ExpansionCardContent extends StatelessWidget {
       data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
       child: ExpansionTile(
         expandedCrossAxisAlignment: CrossAxisAlignment.start,
-
         tilePadding: EdgeInsets.all(0.0),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,8 +43,7 @@ class ExpansionCardContent extends StatelessWidget {
             ),
           ],
         ),
-        // trailing: SvgPicture.asset('assets/icons/arrow_icon.svg'),
-
+        trailing: SvgPicture.asset('assets/icons/arrow_icon.svg'),
         children: [
           SizedBox(height: kDefaultPadding),
           Divider(

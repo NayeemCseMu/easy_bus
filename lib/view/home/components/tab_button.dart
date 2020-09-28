@@ -11,10 +11,12 @@ class TabButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        SizedBox(width: kDefaultPadding / 2),
         ...List.generate(
           tabItem.tabList.length,
           (index) => Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
             child: TabItem(
               title: tabItem.tabList[index].title,
               icon: tabItem.tabList[index].checkIcon()
@@ -57,30 +59,30 @@ class TabItem extends StatelessWidget {
         decoration: BoxDecoration(
             color: isActive ? kPrimaryColor : kInActiveColor,
             borderRadius: BorderRadius.circular(5),
-            boxShadow: [kCardBoxShadow]),
+            boxShadow: [isActive ? kCardBoxShadow : kBoxShadow]),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 4),
+          padding: const EdgeInsets.symmetric(
+              horizontal: kDefaultPadding / 2, vertical: kDefaultPadding / 4),
           child: Row(children: <Widget>[
-            SizedBox(width: 10),
             Text(
               title,
               style: kTextFieldTextStyle.copyWith(
                 color: isActive ? Colors.white : kTextColor,
               ),
             ),
-            SizedBox(width: 10),
             isIcon
                 ? Container(
                     padding:
                         EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-                    margin: EdgeInsets.only(right: 10.0),
+                    margin: EdgeInsets.only(left: 10.0),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: Colors.white),
                     child: SvgPicture.asset(
                       icon,
                       color: isActive ? kPrimaryColor : kInActiveColor,
-                    ))
+                    ),
+                  )
                 : SizedBox(),
           ]),
         ),

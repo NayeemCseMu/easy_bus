@@ -1,5 +1,5 @@
-import 'package:easy_bus/components/common_card_content.dart';
-import 'package:easy_bus/components/common_description_card.dart';
+import 'package:easy_bus/components/history_and_search_content.dart';
+import 'package:easy_bus/components/history_and_search_card.dart';
 import 'package:easy_bus/components/custom_dropdown.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/model/tab_item.dart';
@@ -47,8 +47,9 @@ class Body extends StatelessWidget {
                   ),
                   HistoryAndSearchCard(
                     cardChild: HistoryAndSearchCardContent(
-                      busName: 'Ena',
-                      busNumber: '2222',
+                      busName: 'Ena Transport',
+                      busNumber: 'DHK METRO  0001',
+                      isHistory: true,
                     ),
                   ),
                 ],

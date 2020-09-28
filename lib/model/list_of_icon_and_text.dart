@@ -19,7 +19,7 @@ List<SeatIcon> seatList = [
   SeatIcon(
       icon: 'assets/icons/available_seat.svg',
       title: 'Booked\nSeats',
-      color: kBackgroundColor),
+      color: Colors.white),
   SeatIcon(
       icon: 'assets/icons/available_seat.svg',
       title: 'Selected\nSeats',
