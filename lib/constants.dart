@@ -20,7 +20,7 @@ const kTrainIconColor = Color(0xFFEE1952);
 
 const kInActiveColor = Color(0xFFEBEEFF);
 
-const kDefaultPadding = 20.0;
+final kDefaultPadding = getScreeWidth(20.0);
 
 const kBoxShadow = BoxShadow(
     offset: Offset(0, 8),
