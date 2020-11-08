@@ -24,7 +24,7 @@ class Body extends StatelessWidget {
                   4,
                   (index) => HistoryAndSearchCard(
                     press: () {
-                      Navigator.pushNamed(context, SeatSelect.seat_select);
+                      Navigator.pushNamed(context, SeatSelect.routeName);
                     },
                     cardChild: HistoryAndSearchCardContent(
                       busName: 'Ena Transportn',

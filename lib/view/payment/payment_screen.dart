@@ -6,10 +6,9 @@ import 'package:easy_bus/constants.dart';
 import 'package:easy_bus/model/list_of_icon_and_text.dart';
 import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class PaymentScreen extends StatelessWidget {
-  static const payment_screen = 'payment_screen';
+  static const String routeName = '/payment_screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,15 +31,13 @@ class PaymentScreen extends StatelessWidget {
                     ...List.generate(
                       paymentIcon.length,
                       (index) => Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: kDefaultPadding / 2),
+                        padding:
+                            EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
                         child: RoundContainer(
                           marginValue: 0.0,
                           editBoxDecoration: true,
                           color: Colors.white,
-                          childWidget: SvgPicture.asset(
-                            paymentIcon[index],
-                          ),
+                          childWidget: paymentIcon[index],
                         ),
                       ),
                     ),

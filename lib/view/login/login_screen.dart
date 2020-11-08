@@ -8,6 +8,7 @@ import 'package:easy_bus/view/register/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
+  static const String routeName = '/login_screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +54,7 @@ class LoginScreen extends StatelessWidget {
                     color: kPrimaryColor,
                     fontSize: getTextSize(18),
                     press: () {
-                      Navigator.pushNamed(context, SearchScreen.search_screen);
+                      Navigator.pushNamed(context, SearchScreen.routeName);
                     },
                   ),
                   SizedBox(height: getScreenHeight(20)),
@@ -70,8 +71,7 @@ class LoginScreen extends StatelessWidget {
                     color: kRegButtonColor,
                     fontSize: getTextSize(14),
                     press: () {
-                      Navigator.pushNamed(
-                          context, RegisterScreen.register_screen);
+                      Navigator.pushNamed(context, RegisterScreen.routeName);
                     },
                   ),
                   SizedBox(height: getScreenHeight(15)),

@@ -18,6 +18,8 @@ class ResponsiveSize {
       screenHeight = _mediaQueryData.size.width;
       screenWidth = _mediaQueryData.size.height;
     }
+    // print(screenHeight);
+    // print(screenWidth);
   }
 }
 

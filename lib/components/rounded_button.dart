@@ -14,7 +14,8 @@ class RoundButton extends StatelessWidget {
     return SizedBox(
       height: getScreenHeight(55),
       width: getScreeWidth(335),
-      child: FlatButton(
+      child: RaisedButton(
+        elevation: 1.0,
         color: color,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(getScreenHeight(27.5))),

@@ -16,7 +16,7 @@ class SeatIconVisualForSelection extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 10,
-          childAspectRatio: 1.25,
+          childAspectRatio: 1.32,
           mainAxisSpacing: 10,
           crossAxisSpacing: 5,
         ),

@@ -79,7 +79,7 @@ class TicketSearchField extends StatelessWidget {
             color: kPrimaryColor,
             fontSize: getTextSize(18),
             press: () {
-              Navigator.pushNamed(context, SearchTicket.seach_ticket);
+              Navigator.pushNamed(context, SearchTicket.routeName);
             },
           )
         ],

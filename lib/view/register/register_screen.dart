@@ -7,7 +7,7 @@ import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatelessWidget {
-  static const register_screen = 'register_screen';
+  static const String routeName = '/register_screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

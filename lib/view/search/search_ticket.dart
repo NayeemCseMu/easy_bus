@@ -3,7 +3,7 @@ import 'package:easy_bus/view/search/components/body.dart';
 import 'package:flutter/material.dart';
 
 class SearchTicket extends StatelessWidget {
-  static const seach_ticket = "search_ticket";
+  static const String routeName = '/search_ticket';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

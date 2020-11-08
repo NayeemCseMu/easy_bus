@@ -15,8 +15,7 @@ class TabButton extends StatelessWidget {
         ...List.generate(
           tabItem.tabList.length,
           (index) => Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
+            padding: EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
             child: TabItem(
               title: tabItem.tabList[index].title,
               icon: tabItem.tabList[index].checkIcon()
@@ -61,7 +60,7 @@ class TabItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
             boxShadow: [isActive ? kCardBoxShadow : kBoxShadow]),
         child: Padding(
-          padding: const EdgeInsets.symmetric(
+          padding: EdgeInsets.symmetric(
               horizontal: kDefaultPadding / 2, vertical: kDefaultPadding / 4),
           child: Row(children: <Widget>[
             Text(

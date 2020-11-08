@@ -32,7 +32,7 @@ class HistoryAndSearchCardContent extends StatelessWidget {
                   children: [
                     SizedBox(width: kDefaultPadding / 2),
                     Expanded(
-                        flex: 2,
+                        flex: 1,
                         child: buildListTile(
                             isIcon: true,
                             icon: 'assets/icons/train.svg',
@@ -53,7 +53,7 @@ class HistoryAndSearchCardContent extends StatelessWidget {
               : Row(
                   children: [
                     Expanded(
-                        flex: 2,
+                        flex: 1,
                         child: buildListTile(
                             title: 'Available seats',
                             subtitle: '35 out of 40')),

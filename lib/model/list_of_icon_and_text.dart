@@ -1,6 +1,8 @@
 import 'package:easy_bus/constants.dart';
+import 'package:easy_bus/size.dart';
 import 'package:easy_bus/view/seat/components/rules_and_seat_information_with_price.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SeatIcon {
   final String icon;
@@ -45,9 +47,17 @@ List<TextWidget> textAndIcon = [
 List<String> seatSerial = ['D1', 'D2', 'E3', 'E4'];
 
 //payment method icons
-List<String> paymentIcon = [
-  'assets/icons/visa.svg',
-  'assets/icons/visa.svg',
-  'assets/icons/visa.svg',
-  'assets/icons/visa.svg',
+List<SvgPicture> paymentIcon = [
+  SvgPicture.asset('assets/icons/visa.svg'),
+  SvgPicture.asset(
+    'assets/images/paypal.png',
+    height: getScreeWidth(24),
+    width: getScreeWidth(24),
+  ),
+  SvgPicture.asset(
+    'assets/images/paypal.png',
+    height: getScreeWidth(24),
+    width: getScreeWidth(24),
+  ),
+  SvgPicture.asset('assets/icons/visa.svg'),
 ];

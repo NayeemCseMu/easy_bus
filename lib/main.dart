@@ -1,16 +1,12 @@
 import 'package:easy_bus/constants.dart';
+import 'package:easy_bus/route.dart';
 import 'package:easy_bus/size.dart';
-import 'package:easy_bus/view/home/home_screen.dart';
-import 'package:easy_bus/view/payment/payment_screen.dart';
-import 'package:easy_bus/view/register/register_screen.dart';
-import 'package:easy_bus/view/search/search_ticket.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'model/tab_item.dart';
 import 'view/login/login_screen.dart';
-import 'view/seat/seat_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,29 +19,23 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => HomeTab(),
       child: MaterialApp(
-          title: 'EasyBuss',
-          theme: ThemeData(
-            scaffoldBackgroundColor: Colors.white.withOpacity(0.9),
-            textTheme:
-                GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
-            primarySwatch: Colors.blue,
-            visualDensity: VisualDensity.adaptivePlatformDensity,
-          ),
-          home: SplashScreen(),
-          routes: {
-            SplashScreen.login_screen: (context) => LoginScreen(),
-            RegisterScreen.register_screen: (context) => RegisterScreen(),
-            SearchScreen.search_screen: (context) => SearchScreen(),
-            SearchTicket.seach_ticket: (context) => SearchTicket(),
-            SeatSelect.seat_select: (context) => SeatSelect(),
-            PaymentScreen.payment_screen: (context) => PaymentScreen()
-          }),
+        title: 'EasyBuss',
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white.withOpacity(0.9),
+          textTheme:
+              GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        initialRoute: SplashScreen.routeName,
+        routes: routes,
+      ),
     );
   }
 }
 
 class SplashScreen extends StatefulWidget {
-  static const login_screen = 'login_screen';
+  static const String routeName = '/login_screen';
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -57,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Future.delayed(Duration(seconds: 3), () {
       setState(() {
-        Navigator.pushNamed(context, SplashScreen.login_screen);
+        Navigator.pushReplacementNamed(context, LoginScreen.routeName);
       });
     });
   }
@@ -73,9 +63,10 @@ class _SplashScreenState extends State<SplashScreen> {
         child: DecoratedBox(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-                colors: [kPrimaryColor, kSecondaryColor]),
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+              colors: [kPrimaryColor, kSecondaryColor],
+            ),
           ),
           child: Center(
             child: Text(

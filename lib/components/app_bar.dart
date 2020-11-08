@@ -20,7 +20,7 @@ AppBar buildAppBar(
     centerTitle: true,
     actions: [
       Padding(
-        padding: const EdgeInsets.only(right: kDefaultPadding),
+        padding: EdgeInsets.only(right: kDefaultPadding),
         child:
             trailing ? SvgPicture.asset('assets/icons/menu.svg') : SizedBox(),
       ),

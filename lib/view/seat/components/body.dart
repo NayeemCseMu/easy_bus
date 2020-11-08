@@ -65,7 +65,7 @@ class Body extends StatelessWidget {
                 SizedBox(height: getScreenHeight(20.0)),
                 RoundButton(
                   press: () {
-                    Navigator.pushNamed(context, PaymentScreen.payment_screen);
+                    Navigator.pushNamed(context, PaymentScreen.routeName);
                   },
                   title: 'Confirm',
                   color: kPrimaryColor,

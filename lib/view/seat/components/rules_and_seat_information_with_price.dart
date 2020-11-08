@@ -38,23 +38,26 @@ class RulesAndSeatInformationWithPrice extends StatelessWidget {
         buildText(text: 'Your Seats'),
         SizedBox(
           width: getScreeWidth(187),
-          child: Row(
-            children: <Widget>[
-              ...List.generate(
-                seatSerial.length,
-                (index) => Padding(
-                  padding: const EdgeInsets.only(
-                      right: kDefaultPadding / 2, top: kDefaultPadding / 2),
-                  //here we used TabItem button style for display our selected seat.
-                  child: TabItem(
-                    title: seatSerial[index],
-                    isIcon: false,
-                    isActive: true,
-                    press: () {},
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: <Widget>[
+                ...List.generate(
+                  seatSerial.length,
+                  (index) => Padding(
+                    padding: EdgeInsets.only(
+                        right: kDefaultPadding / 2, top: kDefaultPadding / 2),
+                    //here we used TabItem button style for display our selected seat.
+                    child: TabItem(
+                      title: seatSerial[index],
+                      isIcon: false,
+                      isActive: true,
+                      press: () {},
+                    ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
         buildText(text: 'Class'),
@@ -67,7 +70,7 @@ class RulesAndSeatInformationWithPrice extends StatelessWidget {
 
   Padding buildText({String text, Color color = kTextGreenColor}) {
     return Padding(
-      padding: const EdgeInsets.only(top: kDefaultPadding / 1.5),
+      padding: EdgeInsets.only(top: kDefaultPadding / 1.5),
       child: Text(
         text,
         style: kBoldText.copyWith(color: color),
