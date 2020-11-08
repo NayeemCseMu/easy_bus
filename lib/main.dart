@@ -1,4 +1,5 @@
 import 'package:easy_bus/constants.dart';
+import 'package:easy_bus/page_transition.dart';
 import 'package:easy_bus/route.dart';
 import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,10 @@ class MyApp extends StatelessWidget {
           textTheme:
               GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
           primarySwatch: Colors.blue,
+          pageTransitionsTheme: PageTransitionsTheme(builders: {
+            TargetPlatform.android: CustomPageTransitionBuilder(),
+            TargetPlatform.iOS: CustomPageTransitionBuilder()
+          }),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         initialRoute: SplashScreen.routeName,

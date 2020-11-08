@@ -11,6 +11,7 @@ class LoginScreen extends StatelessWidget {
   static const String routeName = '/login_screen';
   @override
   Widget build(BuildContext context) {
+    ResponsiveSize.init(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
