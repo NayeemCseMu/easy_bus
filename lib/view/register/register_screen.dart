@@ -1,7 +1,6 @@
 import 'package:easy_bus/components/app_bar.dart';
 import 'package:easy_bus/components/header_text.dart';
-import 'package:easy_bus/components/rounded_button.dart';
-import 'package:easy_bus/components/container_rounded.dart';
+import 'package:easy_bus/components/button.dart';
 import 'package:easy_bus/constants.dart';
 import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
@@ -14,82 +13,71 @@ class RegisterScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: buildAppBar(title: "", trailing: false, color: kTextColor),
       body: SingleChildScrollView(
-        child: SizedBox(
-          width: double.infinity,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(height: getScreenHeight(124)),
-              HeaderText(
-                title: 'Welcome to easy bus',
-                subtitle: 'It take one minute to\nbe our member',
-                color: Color(0xFF000000).withOpacity(0.5),
-              ),
-              SizedBox(height: 47),
-              //this text field is for name
-              RoundContainer(
-                marginValue: kDefaultPadding,
-                childWidget: TextField(
+        child: Center(
+          child: SizedBox(
+            width: getScreeWidth(335),
+            child: Column(
+              children: <Widget>[
+                getVerticalSpace(147),
+                HeaderText(
+                  title: 'Welcome to easy bus',
+                  subtitle: 'It take one minute to\nbe our member',
+                  color: Color(0xFF000000).withOpacity(0.5),
+                ),
+                getVerticalSpace(47),
+                //this text field is for name
+                TextField(
                   style: kTextFieldTextStyle,
                   decoration: kInputDecoration.copyWith(
-                      hintText: 'nayeem', icon: Icon(Icons.person)),
+                      hintText: 'nayeem', prefixIcon: Icon(Icons.person)),
                 ),
-              ),
-              SizedBox(height: 20),
-              //this text field is for mobile number
-              RoundContainer(
-                marginValue: kDefaultPadding,
-                childWidget: TextField(
+                getVerticalSpace(20),
+                //this text field is for mobile number
+                TextField(
                   style: kTextFieldTextStyle,
                   decoration: kInputDecoration.copyWith(
-                      hintText: '+8801746255964', icon: Icon(Icons.call)),
+                      hintText: '+8801746255964', prefixIcon: Icon(Icons.call)),
                 ),
-              ),
-              SizedBox(height: 20),
-              //this text field is for email
-              RoundContainer(
-                marginValue: kDefaultPadding,
-                childWidget: TextField(
+
+                getVerticalSpace(20),
+                //this text field is for email
+                TextField(
                   style: kTextFieldTextStyle,
                   decoration: kInputDecoration.copyWith(
-                      hintText: 'example@gmail.com', icon: Icon(Icons.mail)),
+                      hintText: 'example@gmail.com',
+                      prefixIcon: Icon(Icons.mail)),
                 ),
-              ),
-              SizedBox(height: 20),
-              //this text field is for new password
-              RoundContainer(
-                marginValue: kDefaultPadding,
-                childWidget: TextField(
+                getVerticalSpace(20),
+                //this text field is for new password
+                TextField(
                   style: kTextFieldTextStyle,
                   decoration: kInputDecoration.copyWith(
-                      hintText: 'password', icon: Icon(Icons.lock)),
+                      hintText: 'password', prefixIcon: Icon(Icons.lock)),
                 ),
-              ),
-              SizedBox(height: 20),
-              //this text field is for repeat password
-              RoundContainer(
-                marginValue: kDefaultPadding,
-                childWidget: TextField(
+                getVerticalSpace(20),
+                //this text field is for repeat password
+                TextField(
                   style: kTextFieldTextStyle,
                   decoration: kInputDecoration.copyWith(
-                      hintText: 'repeat password', icon: Icon(Icons.lock)),
+                      hintText: 'repeat password',
+                      prefixIcon: Icon(Icons.lock)),
                 ),
-              ),
-              SizedBox(height: 20),
-              // //this is submitted button
-              RoundButton(
-                press: () {},
-                title: 'Confirm',
-                color: kPrimaryColor,
-                fontSize: getTextSize(18),
-              ),
-              SizedBox(height: getScreenHeight(25)),
-              Text(
-                'I already have an account',
-                style: kTextFieldTextStyle.copyWith(
-                    decoration: TextDecoration.underline),
-              )
-            ],
+                SizedBox(height: 20),
+                // //this is submitted button
+                Button(
+                  press: () {},
+                  title: 'Confirm',
+                  color: kPrimaryColor,
+                  fontSize: getTextSize(18),
+                ),
+                getVerticalSpace(25),
+                Text(
+                  'I already have an account',
+                  style: kTextFieldTextStyle.copyWith(
+                      decoration: TextDecoration.underline),
+                )
+              ],
+            ),
           ),
         ),
       ),

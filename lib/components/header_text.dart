@@ -4,7 +4,7 @@ import '../constants.dart';
 import '../size.dart';
 
 class HeaderText extends StatelessWidget {
-  HeaderText({Key key, this.title, this.subtitle, this.color});
+  HeaderText({this.title, this.subtitle, this.color});
 
   final String title, subtitle;
   final Color color;

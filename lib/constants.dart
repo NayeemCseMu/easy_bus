@@ -23,57 +23,70 @@ const kInActiveColor = Color(0xFFEBEEFF);
 final kDefaultPadding = getScreeWidth(20.0);
 
 const kBoxShadow = BoxShadow(
-    offset: Offset(0, 8),
-    blurRadius: 15,
-    color: Color.fromRGBO(32, 32, 35, 0.02));
+  offset: Offset(0, 8),
+  blurRadius: 15,
+  color: Color.fromRGBO(32, 32, 35, 0.02),
+);
 
 const kCardBoxShadow = BoxShadow(
-    offset: Offset(0, 8),
-    blurRadius: 15,
-    color: Color.fromRGBO(32, 32, 35, 0.07));
+  offset: Offset(0, 8),
+  blurRadius: 15,
+  color: Color.fromRGBO(32, 32, 35, 0.07),
+);
 
 const kTextShadow = BoxShadow(
-    offset: Offset(0, 4), blurRadius: 4, color: Color.fromRGBO(0, 0, 0, 0.25));
+  offset: Offset(0, 4),
+  blurRadius: 4,
+  color: Color.fromRGBO(0, 0, 0, 0.25),
+);
 
 final kBoxDecoration = BoxDecoration(
-    color: Colors.white,
-    borderRadius: BorderRadius.circular(getScreenHeight(27.5)),
-    boxShadow: [kBoxShadow]);
+  color: Colors.white,
+  borderRadius: BorderRadius.circular(getScreenHeight(27.5)),
+  boxShadow: [kBoxShadow],
+);
 
 //Bold text
 final kBoldText = TextStyle(
-    color: kTextColor,
-    fontWeight: FontWeight.w700,
-    fontStyle: FontStyle.normal,
-    fontFamily: 'Montserrat',
-    fontSize: 20);
+  color: kTextColor,
+  fontWeight: FontWeight.w700,
+  fontStyle: FontStyle.normal,
+  fontFamily: 'Montserrat',
+  fontSize: 20,
+);
 //SemiBold text
 final kSemiBoldText = TextStyle(
-    color: kTextColor,
-    fontWeight: FontWeight.w600,
-    fontStyle: FontStyle.normal,
-    fontFamily: 'Montserrat',
-    fontSize: 18);
+  color: kTextColor,
+  fontWeight: FontWeight.w600,
+  fontStyle: FontStyle.normal,
+  fontFamily: 'Montserrat',
+  fontSize: 18,
+);
 //Medium text
 final kMediumText = TextStyle(
-    color: kTextColor,
-    fontWeight: FontWeight.w500,
-    fontStyle: FontStyle.normal,
-    fontFamily: 'Montserrat',
-    fontSize: 16);
+  color: kTextColor,
+  fontWeight: FontWeight.w500,
+  fontStyle: FontStyle.normal,
+  fontFamily: 'Montserrat',
+  fontSize: 16,
+);
 
 //for textfield text style
 final kTextFieldTextStyle = TextStyle(
-    color: Color(0xFF444655),
-    fontSize: getTextSize(16),
-    fontFamily: 'Montserrat',
-    fontWeight: FontWeight.w500);
+  color: Color(0xFF444655),
+  fontSize: getTextSize(16),
+  fontFamily: 'Montserrat',
+  fontWeight: FontWeight.w500,
+);
 
 final kInputDecoration = InputDecoration(
-    border: InputBorder.none,
-    hintText: '',
-    hintStyle: TextStyle(fontSize: getTextSize(16)));
+  filled: true,
+  fillColor: Colors.white,
+  contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+  hintStyle: TextStyle(fontSize: getTextSize(16)),
+);
 
+//All bus-name list
 List<String> busList = [
   'Ena Transport',
   'Hanif Transport',

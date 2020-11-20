@@ -2,7 +2,7 @@ import 'package:easy_bus/components/expansion_card_content.dart';
 import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/components/expansion_description_card.dart';
 import 'package:easy_bus/components/header.dart';
-import 'package:easy_bus/components/rounded_button.dart';
+import 'package:easy_bus/components/button.dart';
 import 'package:easy_bus/constants.dart';
 import 'package:easy_bus/model/list_of_icon_and_text.dart';
 import 'package:easy_bus/size.dart';
@@ -63,7 +63,7 @@ class Body extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: getScreenHeight(20.0)),
-                RoundButton(
+                Button(
                   press: () {
                     Navigator.pushNamed(context, PaymentScreen.routeName);
                   },

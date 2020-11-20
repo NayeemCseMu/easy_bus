@@ -28,16 +28,16 @@ class Body extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: getScreenHeight(15)),
+                  getVerticalSpace(15),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: TabButton(tabItem: tabItem), //Top tab button
+                    child: TabButton(), //Top tab button
                   ),
-                  SizedBox(height: kDefaultPadding),
+                  getVerticalSpace(20),
 
                   //this portion contain TextField and Search Button
                   TicketSearchField(),
-                  SizedBox(height: kDefaultPadding), //20
+                  getVerticalSpace(20), //20
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
                     child: Text(

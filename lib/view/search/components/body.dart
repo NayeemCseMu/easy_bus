@@ -11,29 +11,27 @@ import 'package:flutter/material.dart';
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    void onPressed() {
+      Navigator.pushNamed(context, SeatSelect.routeName);
+    }
+
     return Column(
       children: <Widget>[
         Header(headerChild: DateAndResultCard()),
+        CustomDropDown(),
+        getVerticalSpace(15),
         Expanded(
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                SizedBox(height: getScreenHeight(15)),
-                CustomDropDown(),
-                ...List.generate(
-                  4,
-                  (index) => HistoryAndSearchCard(
-                    press: () {
-                      Navigator.pushNamed(context, SeatSelect.routeName);
-                    },
-                    cardChild: HistoryAndSearchCardContent(
-                      busName: 'Ena Transportn',
-                      busNumber: 'DHK METRO 3350',
-                    ),
-                  ),
+          child: ListView.builder(
+            itemCount: 4,
+            itemBuilder: (context, index) {
+              return HistoryAndSearchCard(
+                press: onPressed,
+                cardChild: HistoryAndSearchCardContent(
+                  busName: 'Ena Transportn',
+                  busNumber: 'DHK METRO 3350',
                 ),
-              ],
-            ),
+              );
+            },
           ),
         )
       ],

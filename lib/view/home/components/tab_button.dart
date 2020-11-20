@@ -1,35 +1,36 @@
 import 'package:easy_bus/model/tab_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 import '../../../constants.dart';
 import '../../../size.dart';
 
 class TabButton extends StatelessWidget {
-  TabButton({this.tabItem});
-  final HomeTab tabItem;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(width: kDefaultPadding / 2),
-        ...List.generate(
-          tabItem.tabList.length,
-          (index) => Padding(
-            padding: EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
-            child: TabItem(
-              title: tabItem.tabList[index].title,
-              icon: tabItem.tabList[index].checkIcon()
-                  ? tabItem.tabList[index].icon
-                  : null,
-              isIcon: tabItem.tabList[index].checkIcon() ? true : false,
-              isActive: tabItem.selectedIndex == index ? true : false,
-              press: () {
-                tabItem.getIndex(index);
-              },
+    return Consumer<HomeTab>(
+      builder: (context, tabItem, _) => Row(
+        children: [
+          getHorizontalSpace(10),
+          ...List.generate(
+            tabItem.tabList.length,
+            (index) => Padding(
+              padding: EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
+              child: TabItem(
+                title: tabItem.tabList[index].title,
+                icon: tabItem.tabList[index].checkIcon()
+                    ? tabItem.tabList[index].icon
+                    : null,
+                isIcon: tabItem.tabList[index].checkIcon() ? true : false,
+                isActive: tabItem.selectedIndex == index ? true : false,
+                press: () {
+                  tabItem.getIndex(index);
+                },
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

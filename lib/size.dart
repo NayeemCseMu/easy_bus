@@ -34,3 +34,11 @@ double getScreeWidth(double inputWidth) {
 double getTextSize(double inputSize) {
   return (inputSize / 812) * ResponsiveSize.screenHeight;
 }
+
+Widget getVerticalSpace(double height) {
+  return SizedBox(height: getScreenHeight(height));
+}
+
+Widget getHorizontalSpace(double width) {
+  return SizedBox(width: getScreeWidth(width));
+}

@@ -10,7 +10,6 @@ class CustomDropDown extends StatelessWidget {
     List<DropdownMenuItem<String>> menuItems = [];
     for (var item in busList) {
       final menuItem = DropdownMenuItem(value: item, child: Text(item));
-
       menuItems.add(menuItem);
     }
 

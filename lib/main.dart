@@ -1,7 +1,7 @@
 import 'package:easy_bus/constants.dart';
-import 'package:easy_bus/page_transition.dart';
 import 'package:easy_bus/route.dart';
 import 'package:easy_bus/size.dart';
+import 'package:easy_bus/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -21,17 +21,7 @@ class MyApp extends StatelessWidget {
       create: (context) => HomeTab(),
       child: MaterialApp(
         title: 'EasyBuss',
-        theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white.withOpacity(0.9),
-          textTheme:
-              GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
-          primarySwatch: Colors.blue,
-          pageTransitionsTheme: PageTransitionsTheme(builders: {
-            TargetPlatform.android: CustomPageTransitionBuilder(),
-            TargetPlatform.iOS: CustomPageTransitionBuilder()
-          }),
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
+        theme: buildThemeData(context),
         initialRoute: SplashScreen.routeName,
         routes: routes,
       ),
@@ -40,7 +30,7 @@ class MyApp extends StatelessWidget {
 }
 
 class SplashScreen extends StatefulWidget {
-  static const String routeName = '/login_screen';
+  static const String routeName = '/splash_screen';
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
