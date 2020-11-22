@@ -1,13 +1,13 @@
-import 'package:easy_bus/components/history_and_search_content.dart';
-import 'package:easy_bus/components/history_and_search_card.dart';
-import 'package:easy_bus/components/custom_dropdown.dart';
-import 'package:easy_bus/components/header.dart';
-import 'package:easy_bus/model/tab_item.dart';
-import 'package:easy_bus/constants.dart';
-import 'package:easy_bus/size.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import "package:flutter/cupertino.dart";
 import 'package:provider/provider.dart';
+import '../../../components/history_and_search_content.dart';
+import '../../../components/history_and_search_card.dart';
+import '../../../components/custom_dropdown.dart';
+import '../../../components/header.dart';
+import '../../../model/tab_item.dart';
+import '../../../utilis/constants.dart';
+import '../../../utilis/size.dart';
 
 import 'tab_button.dart';
 import 'ticket_search_field_&_button.dart';

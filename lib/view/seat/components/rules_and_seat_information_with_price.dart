@@ -4,8 +4,8 @@ import 'package:easy_bus/view/home/components/tab_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../constants.dart';
-import '../../../size.dart';
+import '../../../utilis/constants.dart';
+import '../../../utilis/size.dart';
 
 class RulesAndSeatInformationWithPrice extends StatelessWidget {
   const RulesAndSeatInformationWithPrice({

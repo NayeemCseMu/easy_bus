@@ -2,8 +2,8 @@ import 'package:easy_bus/model/tab_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import '../../../constants.dart';
-import '../../../size.dart';
+import '../../../utilis/constants.dart';
+import '../../../utilis/size.dart';
 
 class TabButton extends StatelessWidget {
   @override

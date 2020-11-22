@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../constants.dart';
-import '../size.dart';
+import '../utilis/constants.dart';
+import '../utilis/size.dart';
 
 class ExpansionCardContent extends StatelessWidget {
   final String busName;

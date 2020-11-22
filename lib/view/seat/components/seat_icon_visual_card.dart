@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
-import '../../../constants.dart';
-import '../../../size.dart';
+import '../../../utilis/constants.dart';
+import '../../../utilis/size.dart';
 
 class SeatIconVisualForSelection extends StatelessWidget {
   @override

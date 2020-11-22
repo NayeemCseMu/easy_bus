@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../size.dart';
+import '../utilis/size.dart';
 
 class Button extends CustomRaisedButton {
   final String title;

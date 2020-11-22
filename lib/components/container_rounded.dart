@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
-import '../size.dart';
+import '../utilis/constants.dart';
+import '../utilis/size.dart';
 
 class RoundContainer extends StatelessWidget {
   RoundContainer(

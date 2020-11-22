@@ -3,12 +3,15 @@ import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/components/expansion_description_card.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/components/button.dart';
-import 'package:easy_bus/constants.dart';
+import 'package:easy_bus/utilis/constants.dart';
 import 'package:easy_bus/model/list_of_icon_and_text.dart';
-import 'package:easy_bus/size.dart';
+import 'package:easy_bus/model/tab_item.dart';
+import 'package:easy_bus/utilis/size.dart';
 import 'package:easy_bus/view/payment/payment_screen.dart';
+import 'package:easy_bus/view/search/search_ticket.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 import 'rules_and_seat_information_with_price.dart';
 import 'seat_icon_visual_card.dart';
@@ -16,6 +19,7 @@ import 'seat_icon_visual_card.dart';
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<HomeTab>(context);
     return Column(
       children: <Widget>[
         Header(
@@ -64,12 +68,17 @@ class Body extends StatelessWidget {
                 ),
                 SizedBox(height: getScreenHeight(20.0)),
                 Button(
-                  press: () {
-                    Navigator.pushNamed(context, PaymentScreen.routeName);
-                  },
-                  title: 'Confirm',
+                  title: provider.tripStatus == TripStatus.Single
+                      ? 'Confirm'
+                      : 'Continue',
                   color: kPrimaryColor,
                   fontSize: getTextSize(18),
+                  press: () {
+                    Navigator.of(context).pushNamed(
+                        provider.tripStatus == TripStatus.Single
+                            ? PaymentScreen.routeName
+                            : SearchTicket.routeName);
+                  },
                 ),
                 SizedBox(height: kDefaultPadding),
               ],

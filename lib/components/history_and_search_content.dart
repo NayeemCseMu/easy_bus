@@ -1,8 +1,8 @@
-import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
+import '../utilis/size.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../constants.dart';
+import '../utilis/constants.dart';
 
 class HistoryAndSearchCardContent extends StatelessWidget {
   final String busName;

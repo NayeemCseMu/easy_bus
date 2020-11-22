@@ -1,5 +1,5 @@
 import 'package:easy_bus/components/app_bar.dart';
-import 'package:easy_bus/size.dart';
+import 'package:easy_bus/utilis/size.dart';
 import 'package:easy_bus/view/seat/components/body.dart';
 import 'package:flutter/material.dart';
 

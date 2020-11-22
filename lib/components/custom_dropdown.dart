@@ -1,8 +1,8 @@
-import 'package:easy_bus/size.dart';
 import 'package:flutter/material.dart';
+import '../utilis/size.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../constants.dart';
+import '../utilis/constants.dart';
 
 class CustomDropDown extends StatelessWidget {
   @override

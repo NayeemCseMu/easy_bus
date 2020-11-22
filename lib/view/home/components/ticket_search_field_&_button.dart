@@ -1,22 +1,15 @@
-import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/components/button.dart';
 import 'package:easy_bus/model/tab_item.dart';
 import 'package:easy_bus/view/search/search_ticket.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../constants.dart';
+import '../../../utilis/constants.dart';
 import 'package:provider/provider.dart';
 
-import '../../../size.dart';
+import '../../../utilis/size.dart';
 
 class TicketSearchField extends StatelessWidget {
-  const TicketSearchField({
-    Key key,
-  }) : super(key: key);
-
-  //here left lot's of thing to make efficinetly so that code can be more readable
-
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<HomeTab>(context);

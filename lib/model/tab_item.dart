@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 enum TabItemState { OneWay, RoundTrip }
+enum TripStatus { Single, Return }
 
 class Tab {
   Tab({@required this.title, this.icon});
@@ -17,11 +18,15 @@ class Tab {
 class HomeTab with ChangeNotifier {
   int selectedIndex = 0;
   int seatSelectIndex = -1;
-  TabItemState itemState;
+  TabItemState itemState = TabItemState.OneWay;
+  TripStatus tripStatus = TripStatus.Single;
 
   void getIndex(int index) {
     selectedIndex = index;
     itemState = selectedIndex == 1 ? TabItemState.RoundTrip : null;
+    tripStatus = itemState == TabItemState.RoundTrip
+        ? TripStatus.Return
+        : TripStatus.Single;
     notifyListeners();
   }
 

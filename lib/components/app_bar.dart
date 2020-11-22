@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:easy_bus/constants.dart';
+import 'package:easy_bus/utilis/constants.dart';
 
 AppBar buildAppBar(
     {String title, Color color = Colors.white, bool trailing = true}) {

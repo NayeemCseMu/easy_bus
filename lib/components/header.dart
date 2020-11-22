@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
-import '../size.dart';
+import '../utilis/constants.dart';
+import '../utilis/size.dart';
 
 class Header extends StatelessWidget {
   Header({@required this.headerChild, this.size = 168.0});

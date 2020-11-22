@@ -3,8 +3,8 @@ import 'package:easy_bus/components/container_rounded.dart';
 import 'package:easy_bus/components/custom_dropdown.dart';
 import 'package:easy_bus/components/history_and_search_card.dart';
 import 'package:easy_bus/components/header.dart';
-import 'package:easy_bus/constants.dart';
-import 'package:easy_bus/size.dart';
+import 'package:easy_bus/utilis/constants.dart';
+import 'package:easy_bus/utilis/size.dart';
 import 'package:easy_bus/view/seat/seat_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +18,8 @@ class Body extends StatelessWidget {
     return Column(
       children: <Widget>[
         Header(headerChild: DateAndResultCard()),
-        CustomDropDown(),
         getVerticalSpace(15),
+        CustomDropDown(),
         Expanded(
           child: ListView.builder(
             itemCount: 4,
