@@ -1,8 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_bus/model/list_of_icon_and_text.dart';
+import 'package:easy_bus/provider/tab_item.dart';
 import 'package:easy_bus/view/home/components/tab_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 import '../../../utilis/constants.dart';
 import '../../../utilis/size.dart';
@@ -40,30 +42,40 @@ class RulesAndSeatInformationWithPrice extends StatelessWidget {
           width: getScreeWidth(187),
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Row(
-              children: <Widget>[
-                ...List.generate(
-                  seatSerial.length,
-                  (index) => Padding(
-                    padding: EdgeInsets.only(
-                        right: kDefaultPadding / 2, top: kDefaultPadding / 2),
-                    //here we used TabItem button style for display our selected seat.
-                    child: TabItem(
-                      title: seatSerial[index],
-                      isIcon: false,
-                      isActive: true,
-                      press: () {},
+            child: Consumer<HomeTab>(
+              builder: (context, seatNo, _) => seatNo.seatNumber.length == 0
+                  ? SizedBox()
+                  : Row(
+                      children: <Widget>[
+                        ...List.generate(
+                          seatNo.seatNumber.length,
+                          (index) => Padding(
+                            padding: EdgeInsets.only(
+                                right: kDefaultPadding / 2,
+                                top: kDefaultPadding / 2),
+                            //here we used TabItem button style for display our selected seat.
+                            child: TabItem(
+                              title: seatNo.seatNumber[index],
+                              isIcon: false,
+                              isActive: true,
+                              press: () {},
+                            ),
+                          ),
+                        )
+                      ],
                     ),
-                  ),
-                )
-              ],
             ),
           ),
         ),
         buildText(text: 'Class'),
         buildText(text: 'Economy(AC)', color: kTextColor),
         buildText(text: 'Total Cost'),
-        buildText(text: '\$160 (4 persons)', color: kTextColor),
+        Consumer<HomeTab>(
+          builder: (context, provider, _) => buildText(
+              text:
+                  '\$${provider.total} (${provider.seatNumber.length} persons)',
+              color: kTextColor),
+        ),
       ],
     );
   }
