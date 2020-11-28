@@ -1,6 +1,6 @@
-import 'package:easy_bus/utilis/constants.dart';
-import '../view/seat/components/rules_and_seat_information_with_price.dart';
 import 'package:flutter/material.dart';
+import '../utilis/constants.dart';
+import '../view/seat/components/rules_and_seat_information_with_price.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SeatIcon {
@@ -42,8 +42,6 @@ List<TextWidget> textAndIcon = [
     text: 'We will return 60% cash for cancel the trip.',
   ),
 ];
-
-List<String> seatSerial = ['D1', 'D2', 'E3', 'E4'];
 
 //payment method icons
 List<SvgPicture> paymentIcon = [
