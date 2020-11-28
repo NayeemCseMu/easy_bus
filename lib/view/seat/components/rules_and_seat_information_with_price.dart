@@ -54,12 +54,8 @@ class RulesAndSeatInformationWithPrice extends StatelessWidget {
                                 right: kDefaultPadding / 2,
                                 top: kDefaultPadding / 2),
                             //here we used TabItem button style for display our selected seat.
-                            child: TabItem(
-                              title: seatNo.seatNumber[index],
-                              isIcon: false,
-                              isActive: true,
-                              press: () {},
-                            ),
+                            child: SeatNumberCard(
+                                seatNoText: seatNo.seatNumber[index]),
                           ),
                         )
                       ],
@@ -87,6 +83,37 @@ class RulesAndSeatInformationWithPrice extends StatelessWidget {
         text,
         style: kBoldText.copyWith(color: color),
       ),
+    );
+  }
+}
+
+class SeatNumberCard extends StatelessWidget {
+  final String seatNoText;
+  const SeatNumberCard({
+    Key key,
+    this.seatNoText,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: getScreenHeight(40),
+      width: getScreenHeight(40),
+      alignment: Alignment.center,
+      margin: EdgeInsets.only(bottom: 10),
+      child: Text(
+        seatNoText,
+        style: kTextFieldTextStyle.copyWith(color: Colors.white),
+      ),
+      decoration: BoxDecoration(
+          color: kPrimaryColor,
+          borderRadius: BorderRadius.circular(5),
+          boxShadow: [
+            BoxShadow(
+                offset: Offset(0, 8),
+                blurRadius: 10,
+                color: kPrimaryColor.withOpacity(0.3))
+          ]),
     );
   }
 }
