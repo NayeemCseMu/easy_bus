@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CustomTransition<T> extends MaterialPageRoute<T> {
+class CustomTransition<T> extends CupertinoPageRoute<T> {
   CustomTransition({WidgetBuilder builder, RouteSettings settings})
       : super(builder: builder, settings: settings);
   @override

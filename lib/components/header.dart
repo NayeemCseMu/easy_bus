@@ -4,14 +4,13 @@ import '../utilis/constants.dart';
 import '../utilis/size.dart';
 
 class Header extends StatelessWidget {
-  Header({@required this.headerChild, this.size = 168.0});
+  Header({@required this.headerChild});
   final Widget headerChild;
-  final double size;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: getScreenHeight(size),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20.0),
       child: Stack(
         alignment: Alignment.topCenter,
         clipBehavior: Clip.none,
@@ -20,8 +19,8 @@ class Header extends StatelessWidget {
             height: getScreenHeight(140),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.topLeft,
+                  begin: Alignment.bottomRight,
+                  end: Alignment.bottomLeft,
                   colors: [kPrimaryColor, kSecondaryColor]),
               borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(getScreenHeight(27.5)),
@@ -29,7 +28,7 @@ class Header extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(bottom: 0, child: headerChild),
+          Positioned(top: 100, child: headerChild),
         ],
       ),
     );

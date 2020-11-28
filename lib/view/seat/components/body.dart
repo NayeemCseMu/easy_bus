@@ -1,11 +1,11 @@
 import 'package:easy_bus/components/expansion_card_content.dart';
-import 'package:easy_bus/components/container_rounded.dart';
+import 'package:easy_bus/components/headerwidgetcard.dart';
 import 'package:easy_bus/components/expansion_description_card.dart';
 import 'package:easy_bus/components/header.dart';
 import 'package:easy_bus/components/button.dart';
 import 'package:easy_bus/utilis/constants.dart';
 import 'package:easy_bus/model/list_of_icon_and_text.dart';
-import 'package:easy_bus/model/tab_item.dart';
+import 'package:easy_bus/provider/tab_item.dart';
 import 'package:easy_bus/utilis/size.dart';
 import 'package:easy_bus/view/payment/payment_screen.dart';
 import 'package:easy_bus/view/search/search_ticket.dart';
@@ -23,10 +23,7 @@ class Body extends StatelessWidget {
     return Column(
       children: <Widget>[
         Header(
-          headerChild: RoundContainer(
-            marginValue: kDefaultPadding,
-            editBoxDecoration: true,
-            color: Colors.white,
+          headerChild: HeaderWidgetCard(
             childWidget: SizedBox(
               width: getScreeWidth(295),
               child: Text('Select Your Seats',
@@ -59,7 +56,7 @@ class Body extends StatelessWidget {
                         children: [
                           SvgPicture.asset('assets/icons/wheel.svg'),
                           SizedBox(height: 10.0),
-                          SeatIconVisualForSelection(),
+                          TapIconToSelect(),
                         ],
                       ),
                     ),
@@ -73,12 +70,14 @@ class Body extends StatelessWidget {
                       : 'Continue',
                   color: kPrimaryColor,
                   fontSize: getTextSize(18),
-                  press: () {
-                    Navigator.of(context).pushNamed(
-                        provider.tripStatus == TripStatus.Single
-                            ? PaymentScreen.routeName
-                            : SearchTicket.routeName);
-                  },
+                  press: provider.seatNumber.isEmpty
+                      ? null
+                      : () {
+                          Navigator.of(context).pushNamed(
+                              provider.tripStatus == TripStatus.Single
+                                  ? PaymentScreen.routeName
+                                  : SearchTicket.routeName);
+                        },
                 ),
                 SizedBox(height: kDefaultPadding),
               ],
