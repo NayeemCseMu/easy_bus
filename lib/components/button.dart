@@ -1,3 +1,4 @@
+import 'package:easy_bus/utilis/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -83,6 +84,8 @@ class CustomRaisedButton extends StatelessWidget {
           color: color,
           onPressed: press,
           shape: buildRoundedRectangleBorder(),
+          disabledColor: kPrimaryColor.withOpacity(0.5),
+          disabledTextColor: Colors.black54,
           child: buttonChild),
     );
   }
