@@ -20,13 +20,23 @@ class HomeTab with ChangeNotifier {
   TabItemState itemState = TabItemState.OneWay;
   TripStatus tripStatus = TripStatus.Single;
   List<String> _seatNumber = [];
-
   List<String> get seatNumber {
     return [..._seatNumber];
   }
 
+  List<int> _trackIndex = [];
+  List<int> get trackIndex {
+    return [..._trackIndex];
+  }
+
+  List<int> _bookedSeatIndex = [4, 5, 20, 21, 14, 15];
+  List<int> get bookedSeatIndex {
+    return [..._bookedSeatIndex];
+  }
+
   void getIndex(int index) {
     selectedIndex = index;
+
     itemState = selectedIndex == 1 ? TabItemState.RoundTrip : null;
     tripStatus = itemState == TabItemState.RoundTrip
         ? TripStatus.Return
@@ -38,17 +48,21 @@ class HomeTab with ChangeNotifier {
   List<String> char = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
   int seatIdentifierNumber = 0;
   void getSeatIndex(int index) {
-    seatSelectIndex = index;
-    int charIndex = (index ~/ 4)
-        .toInt(); //to efficient conversion from double to int using '~';
-    seatIdentifierNumber = findValue(index + 1);
-    _seatNumber.add('${char[charIndex]}$seatIdentifierNumber');
-    total = _seatNumber.length * 40;
+    if (!_bookedSeatIndex.contains(index) && !_trackIndex.contains(index)) {
+      seatSelectIndex = index;
+      _trackIndex.add(index);
+      int charIndex = (index ~/ 4)
+          .toInt(); //to efficient conversion from double to int using '~';
+      seatIdentifierNumber = findValue(index + 1);
+      _seatNumber.add('${char[charIndex]}$seatIdentifierNumber');
+      total = _seatNumber.length * 40;
+    }
     notifyListeners();
   }
 
   void clearList() {
     if (_seatNumber.isNotEmpty) _seatNumber.removeLast();
+    if (_trackIndex.isNotEmpty) _trackIndex.removeLast();
     if (_seatNumber.isEmpty) seatSelectIndex = -1;
 
     if (total != 0) total = total - 40;
