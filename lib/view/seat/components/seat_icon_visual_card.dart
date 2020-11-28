@@ -45,9 +45,11 @@ class TapIconToSelect extends StatelessWidget {
               key: UniqueKey(),
               child: SvgPicture.asset(
                 'assets/icons/available_seat.svg',
-                color: provider.seatSelectIndex == index
-                    ? kPrimaryColor
-                    : kIconColor,
+                color: provider.bookedSeatIndex.contains(index)
+                    ? Colors.grey
+                    : provider.trackIndex.contains(index)
+                        ? kPrimaryColor
+                        : kIconColor,
                 height: getScreeWidth(24),
                 width: getScreeWidth(20),
               ),
