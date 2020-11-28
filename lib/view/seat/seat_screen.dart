@@ -20,8 +20,9 @@ class SeatSelect extends StatelessWidget {
           return SizedBox();
         }
         return FloatingActionButton(
-          backgroundColor: kPrimaryColor,
-          child: Icon(Icons.clear, size: 30),
+          mini: true,
+          backgroundColor: kTextGreenColor,
+          child: Icon(Icons.clear, size: 25),
           onPressed: () {
             provider.clearList();
           },
