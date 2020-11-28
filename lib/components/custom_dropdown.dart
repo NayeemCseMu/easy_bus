@@ -13,24 +13,30 @@ class CustomDropDown extends StatelessWidget {
       menuItems.add(menuItem);
     }
 
-    return Container(
-      alignment: Alignment.center,
-      width: getScreeWidth(335),
-      height: getScreenHeight(55),
-      padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      decoration: kBoxDecoration
-          .copyWith(color: Colors.white, boxShadow: [kCardBoxShadow]),
-      child: DropdownButton<String>(
-        icon: SvgPicture.asset('assets/icons/arrow_icon.svg'),
-        iconSize: 35,
-        hint: Text('Select your bus'),
-        underline: SizedBox(),
-        isExpanded: true,
-        onChanged: (value) {
-          print(value);
-        },
-        items: menuItems,
+    return FittedBox(
+      alignment: Alignment.topCenter,
+      child: Container(
+        alignment: Alignment.center,
+        width: getScreeWidth(335),
+        height: getScreenHeight(55),
+        padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        decoration: kBoxDecoration
+            .copyWith(color: Colors.white, boxShadow: [kCardBoxShadow]),
+        child: DropdownButton<String>(
+          icon: SvgPicture.asset(
+            'assets/icons/arrow_icon.svg',
+            color: Colors.black54,
+          ),
+          iconSize: 35,
+          hint: Text('Select your bus'),
+          underline: SizedBox(),
+          isExpanded: true,
+          onChanged: (value) {
+            print(value);
+          },
+          items: menuItems,
+        ),
       ),
     );
   }
