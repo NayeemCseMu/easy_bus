@@ -1,3 +1,5 @@
+import 'package:easy_bus/model/bus_search_result.dart';
+import 'package:easy_bus/model/history.dart';
 import 'package:flutter/material.dart';
 import '../utilis/size.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -5,13 +7,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../utilis/constants.dart';
 
 class HistoryAndSearchCardContent extends StatelessWidget {
-  final String busName;
-  final String busNumber;
+  final int index;
   final bool isHistory;
 
-  const HistoryAndSearchCardContent(
-      {Key key, this.busName, this.busNumber, this.isHistory = false})
-      : super(key: key);
+  const HistoryAndSearchCardContent({this.index, this.isHistory = false});
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +20,13 @@ class HistoryAndSearchCardContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          buildListTile(title: busName, subtitle: busNumber),
+          buildListTile(
+              title: searchList[index].title ?? '',
+              subtitle: searchList[index].busNumberPlate ?? ''),
           isHistory
               ? buildListTile(
-                  isIcon: false,
-                  title: '3:00 AM (21 nov 19) DHK to SYL',
-                  subtitle: 'Seat no E1',
+                  title: visitList[index].travelDate,
+                  subtitle: visitList[index].seatNo,
                 )
               : Row(
                   children: [
@@ -36,31 +36,32 @@ class HistoryAndSearchCardContent extends StatelessWidget {
                         child: buildListTile(
                             isIcon: true,
                             icon: 'assets/icons/train.svg',
-                            title: 'Time',
-                            subtitle: 'Location')),
+                            title: searchList[index].leaveTime,
+                            subtitle: searchList[index].leavePlace)),
                     Expanded(
                         flex: 1,
                         child: buildListTile(
                             isIcon: true,
                             icon: 'assets/icons/location.svg',
-                            title: 'Time',
-                            subtitle: 'Location')),
+                            title: searchList[index].arriveTime,
+                            subtitle: searchList[index].arrivePlace)),
                   ],
                 ),
           isHistory
-              ? buildListTile(
-                  isIcon: false, title: 'Single Ticket', subtitle: '')
+              ? buildListTile(title: visitList[index].ticketType, subtitle: '')
               : Row(
                   children: [
                     Expanded(
                         flex: 1,
                         child: buildListTile(
                             title: 'Available seats',
-                            subtitle: '35 out of 40')),
+                            subtitle: searchList[index].availableSeat)),
                     Expanded(
                         flex: 1,
                         child: buildListTile(
-                            title: 'Fare', subtitle: '\$40 /person')),
+                            title: 'Fare',
+                            subtitle:
+                                '\$${searchList[index].ticketPrice} /person')),
                   ],
                 ),
         ],
