@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 ThemeData buildThemeData(BuildContext context) {
   return ThemeData(
-      scaffoldBackgroundColor: Colors.white.withOpacity(0.9),
+      scaffoldBackgroundColor: kBackgroundColor,
       textTheme: GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
       primarySwatch: Colors.blue,
       pageTransitionsTheme: PageTransitionsTheme(builders: {
