@@ -17,10 +17,20 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   final scrollController = ScrollController();
   bool closeDropDown = false;
+  final _listKey = GlobalKey<AnimatedListState>();
+  List<SearchResult> _item = [];
 
   @override
   void initState() {
     super.initState();
+
+    searchList.forEach((item) {
+      Future.delayed(Duration(milliseconds: 100), () {
+        _item.add(item);
+        _listKey.currentState.insertItem(_item.length - 1);
+      });
+    });
+
     scrollController.addListener(() {
       setState(() {
         closeDropDown = scrollController.offset > 0;
@@ -44,15 +54,20 @@ class _BodyState extends State<Body> {
           child: CustomDropDown(),
         ),
         Expanded(
-          child: ListView.builder(
-            itemCount: searchList.length,
+          child: AnimatedList(
+            key: _listKey,
+            initialItemCount: searchList.length,
             padding: EdgeInsets.all(0),
             controller: scrollController,
-            itemBuilder: (context, index) {
-              return HistoryAndSearchCard(
-                press: onPressed,
-                cardChild: HistoryAndSearchCardContent(
-                  index: index,
+            itemBuilder: (context, index, animation) {
+              return SlideTransition(
+                position: Tween<Offset>(begin: Offset(1, 0), end: Offset(0, 0))
+                    .animate(animation),
+                child: HistoryAndSearchCard(
+                  press: onPressed,
+                  cardChild: HistoryAndSearchCardContent(
+                    index: index,
+                  ),
                 ),
               );
             },

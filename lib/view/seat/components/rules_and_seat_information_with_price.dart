@@ -1,10 +1,9 @@
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:easy_bus/model/list_of_icon_and_text.dart';
-import 'package:easy_bus/provider/tab_item.dart';
-import 'package:easy_bus/view/home/components/tab_button.dart';
 import 'package:flutter/material.dart';
+import '../../../model/list_of_icon_and_text.dart';
+import '../../../provider/tab_item.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import "package:auto_size_text/auto_size_text.dart";
 
 import '../../../utilis/constants.dart';
 import '../../../utilis/size.dart';

@@ -2,7 +2,6 @@ import 'package:easy_bus/utilis/constants.dart';
 import 'package:easy_bus/utilis/route.dart';
 import 'package:easy_bus/utilis/size.dart';
 import 'package:easy_bus/utilis/theme.dart';
-import 'package:easy_bus/view/seat/seat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'EasyBuss',
         theme: buildThemeData(context),
-        initialRoute: SeatSelect.routeName,
+        initialRoute: SplashScreen.routeName,
         routes: routes,
       ),
     );
