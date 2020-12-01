@@ -75,14 +75,22 @@ class _TicketSearchFieldState extends State<TicketSearchField>
                 style: kTextFieldTextStyle.copyWith(fontSize: getTextSize(18)),
                 decoration: kInputDecoration.copyWith(
                     hintText: 'Sylhet',
-                    icon: SvgPicture.asset('assets/icons/train.svg')),
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15.0, vertical: 15),
+                      child: SvgPicture.asset('assets/icons/train.svg'),
+                    )),
               ),
               getVerticalSpace(10),
               TextField(
                 style: kTextFieldTextStyle.copyWith(fontSize: getTextSize(18)),
                 decoration: kInputDecoration.copyWith(
                     hintText: 'Dhaka',
-                    icon: SvgPicture.asset('assets/icons/location.svg')),
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15.0, vertical: 15),
+                      child: SvgPicture.asset('assets/icons/location.svg'),
+                    )),
               ),
               getVerticalSpace(10),
 
@@ -95,7 +103,11 @@ class _TicketSearchFieldState extends State<TicketSearchField>
                 },
                 decoration: kInputDecoration.copyWith(
                     hintText: date ?? 'Journey date',
-                    icon: SvgPicture.asset('assets/icons/date.svg')),
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15.0, vertical: 15),
+                      child: SvgPicture.asset('assets/icons/date.svg'),
+                    )),
               ),
               //here return date field will show/hide while we select either one way or round trip.
               if (provider.itemState == TabItemState.RoundTrip)
@@ -117,7 +129,11 @@ class _TicketSearchFieldState extends State<TicketSearchField>
                         },
                         decoration: kInputDecoration.copyWith(
                             hintText: returnDate ?? 'Return date',
-                            icon: SvgPicture.asset('assets/icons/date.svg')),
+                            prefixIcon: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 15.0, vertical: 15),
+                              child: SvgPicture.asset('assets/icons/date.svg'),
+                            )),
                       ),
                     ),
                   ),
